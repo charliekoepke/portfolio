@@ -1,0 +1,54 @@
+:root {
+  --color-surface-page: #F4F7FB;
+  --color-surface-default: #FFFFFF;
+  --color-surface-sunken: #E6EDF5;
+  --color-border-default: #D0D9E6;
+
+  --color-text-primary: #0C1B2E;
+  --color-text-secondary: #3D5168;
+  --color-text-muted: #566A80;
+  --color-text-inverse: #F7FAFC;
+
+  --color-brand-navy: #12263E;
+  --color-action-primary: #17345A;
+  --color-action-primary-hover: #102544;
+  --color-action-primary-pressed: #0C1C34;
+  --color-link: #1D4E89;
+  --color-focus: #17345A;
+  --color-disabled-fill: #E4EBF3;
+  --color-disabled-text: #54687C;
+
+  --color-success: #145C38;
+  --color-success-surface: #E5F3EB;
+  --color-warning: #7A4E0C;
+  --color-warning-surface: #F8F1E4;
+  --color-danger: #8A2E2E;
+  --color-danger-surface: #F8E8E8;
+  --color-info: #1D4E89;
+  --color-info-surface: #E7EEF6;
+
+  --font-family-sans: Inter, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-size-title: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-button: 0.875rem;
+  --font-size-badge: 0.75rem;
+  --line-height-title: 1.3;
+  --line-height-body: 1.5;
+  --line-height-button: 1;
+  --line-height-badge: 1;
+
+  --radius-button: 50px;
+  --radius-checkbox: 4px;
+
+  --space-8: 0.5rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-96: 6rem;
+}
