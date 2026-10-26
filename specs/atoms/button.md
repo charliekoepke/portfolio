@@ -6,6 +6,10 @@ Action control. Inter, on the navy palette, drawn as a pill. Two variants: prima
 
 One clear action. The label starts with a verb and stays within three words.
 
+## Default example
+
+Primary "Save". Secondary "Cancel".
+
 ## Shared appearance
 
 | Property | Value | Token |
@@ -63,4 +67,4 @@ Disabled label contrast is 4.79:1.
 - Use a native `button`.
 - One primary button in a region. A secondary button may sit beside it, with 16px between them.
 - The visible label is the accessible name.
-- Button navy stays off text links. Links use `--color-link` and are underlined.
+- Links use this same navy and the same hover navy. A link stays underlined text.

@@ -6,6 +6,10 @@ Compact count. A badge holds a number, not a word. Status words belong to the lo
 
 Show how many. The number is the information. Values above 99 display as 99+.
 
+## Default example
+
+The number 3 beside the label "Comments". A count past 99 reads "99+".
+
 ## Appearance
 
 | Property | Value | Token |

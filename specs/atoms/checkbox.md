@@ -6,6 +6,10 @@ A binary choice. The control is a native checkbox, and the visible label is its 
 
 One option that is on or off. A group of checkboxes can also show an indeterminate parent when only some children are selected.
 
+## Default example
+
+"Subscribe to updates", unchecked.
+
 ## Appearance
 
 | Property | Value | Token |

@@ -1,0 +1,20 @@
+name: Token audit
+
+on:
+  push:
+
+jobs:
+  token-audit:
+    name: Token audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Audit tokens against the specs and WCAG 2.1
+        run: node specs/scripts/token-audit.js

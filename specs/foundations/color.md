@@ -30,12 +30,13 @@ Conformance target is WCAG 2.0 Level AA. Normal text meets 4.5:1. Large text mee
 | Action | `#17345A` | Primary button fill |
 | Action hover | `#102544` | Primary button hover |
 | Action pressed | `#0C1C34` | Primary button pressed |
-| Link | `#1D4E89` | Text links |
+| Link | `#17345A` | Text links |
+| Link hover | `#102544` | Text link hover |
 | Focus | `#17345A` | 2px focus ring, 2px offset |
 | Disabled fill | `#E4EBF3` | Unavailable controls |
 | Disabled text | `#54687C` | Label on a disabled control |
 
-Links use the link navy. Buttons use the action navy. The two stay distinct.
+Links use the action navy and the action hover navy. An underline keeps a link distinct from a button.
 
 ## Status
 
@@ -65,7 +66,7 @@ Worst-case ratio for each text role. The floor is 4.5:1.
 | Secondary `#3D5168` on sunken `#E6EDF5` | 6.91:1 |
 | Muted `#566A80` on sunken `#E6EDF5` | 4.72:1 |
 | Inverse `#F7FAFC` on action `#17345A` | 11.96:1 |
-| Link `#1D4E89` on sunken `#E6EDF5` | 7.11:1 |
+| Link `#17345A` on danger `#F8E8E8` | 10.56:1 |
 | Focus `#17345A` on page `#F4F7FB` | 11.67:1 |
 | Disabled text `#54687C` on disabled fill `#E4EBF3` | 4.79:1 |
 | Success `#145C38` on `#E5F3EB` | 7.01:1 |

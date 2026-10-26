@@ -28,7 +28,8 @@ Named colors for the palette in `foundations/color.md`. Values are custom proper
 | `--color-action-primary` | `#17345A` |
 | `--color-action-primary-hover` | `#102544` |
 | `--color-action-primary-pressed` | `#0C1C34` |
-| `--color-link` | `#1D4E89` |
+| `--color-link` | `#17345A` |
+| `--color-link-hover` | `#102544` |
 | `--color-focus` | `#17345A` |
 | `--color-disabled-fill` | `#E4EBF3` |
 | `--color-disabled-text` | `#54687C` |

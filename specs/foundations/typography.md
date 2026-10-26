@@ -16,6 +16,7 @@ The conformance target is WCAG 2.0 Level AA. Sizes are rem so text can scale to 
 
 | Role | Size | Weight | Line height |
 | --- | --- | --- | --- |
+| Page title | 2rem (32px) | 600 | 1.3 |
 | Section title | 1.25rem (20px) | 600 | 1.3 |
 | Body | 1rem (16px) | 400 | 1.5 |
 | Button label | 0.875rem (14px) | 600 | 1 |

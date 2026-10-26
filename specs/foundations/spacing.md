@@ -20,16 +20,17 @@ The site uses an 8px grid. Spacing, padding, margins, gaps, and control heights 
 
 | Step | Use |
 | --- | --- |
-| 8 | Tight gap inside a control, such as an icon and its label. Badge inline padding. Gap between a badge and the text it counts. Gap between a checkbox and its label |
-| 16 | Gap between sibling controls, including a primary and secondary button. Checkbox size |
-| 24 | Padding inside a component. Button inline padding. Padding inside a panel. Badge height |
+| 8 | Tight gap inside a control, such as an icon and its label. Badge inline padding. Gap between a badge and the text it counts. Gap between a checkbox and its label. Gap between an input label, the field, and its help or error text |
+| 16 | Gap between sibling controls, including a primary and secondary button. Checkbox size. Input inline padding |
+| 24 | Padding inside a component. Button inline padding. Padding inside a panel. Badge height. Icon size |
 | 32 | Space between regions on a page |
-| 40 | Control height. The primary and secondary buttons are 40px |
+| 40 | Control height. Text buttons, icon buttons, and text inputs are 40px |
 | 48 to 96 | Space between large sections and the outer page margin when the viewport allows it |
 
 ## Outside the scale
 
 - A 1px border is a stroke, not a space.
 - The focus ring is a 2px stroke, offset 2px. It is not a spacing step.
+- Icon strokes are 2px. They are not a spacing step.
 - The button radius stays 50px so the 40px control is a full pill.
 - Type sizes stay on the type scale. Body is 16px, which also lands on this grid. The 14px button label does not, and it stays 14px.
