@@ -1,6 +1,6 @@
 # Typography
 
-Inter is the only family. It carries headings, navigation, body, and controls.
+Gafata is the regular face. It carries body text. Montserrat is the semibold and bold face. It carries headings, navigation, and controls.
 
 The conformance target is WCAG 2.0 Level AA. Sizes are rem so text can scale to 200% without loss of content. Body line height is 1.5.
 
@@ -8,7 +8,8 @@ The conformance target is WCAG 2.0 Level AA. Sizes are rem so text can scale to 
 
 | Token | Value |
 | --- | --- |
-| `--font-family-sans` | `Inter, sans-serif` |
+| `--font-family-sans` | `Gafata, serif` |
+| `--font-family-emphasis` | `"Montserrat Emphasis", sans-serif` |
 | `--font-weight-regular` | 400 |
 | `--font-weight-semibold` | 600 |
 

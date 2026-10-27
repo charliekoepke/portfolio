@@ -10,7 +10,7 @@ The search icon button shows "Search" on hover and on keyboard focus.
 
 ## Appearance
 
-The tooltip is `#12263E` with inverse text, 12px Inter 600, 8px padding, and a 4px radius. It sits 8px from the control. Contrast of inverse text on brand navy is 14.60:1.
+The tooltip is `#12263E` with inverse text, 12px Montserrat 600, 8px padding, and a 4px radius. It sits 8px from the control. Contrast of inverse text on brand navy is 14.60:1.
 
 ## Rules
 

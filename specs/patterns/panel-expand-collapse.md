@@ -10,7 +10,7 @@ A row "Methods" with a chevron. It is collapsed. Activating it shows the method 
 
 ## Appearance
 
-The header row is 40px tall with 16px of inline padding. The title is 16px Inter 600. The chevron is a 16px navy stroke at the end of the row. The body is the content panel body, 16px below the header, and it is hidden while collapsed. Focus uses the 2px navy ring on the header.
+The header row is 40px tall with 16px of inline padding. The title is 16px Montserrat 600. The chevron is a 16px navy stroke at the end of the row. The body is the content panel body, 16px below the header, and it is hidden while collapsed. Focus uses the 2px navy ring on the header.
 
 ## Rules
 

@@ -1,10 +1,11 @@
 # Typography tokens
 
-Inter, from `foundations/typography.md`. Custom properties live in `tokens.css`.
+Gafata for regular text and Montserrat for semibold and bold, from `foundations/typography.md`. Custom properties live in `tokens.css`.
 
 | Token | Value |
 | --- | --- |
-| `--font-family-sans` | `Inter, sans-serif` |
+| `--font-family-sans` | `Gafata, serif` |
+| `--font-family-emphasis` | `"Montserrat Emphasis", sans-serif` |
 | `--font-weight-regular` | 400 |
 | `--font-weight-semibold` | 600 |
 | `--font-size-page-title` | 2rem |

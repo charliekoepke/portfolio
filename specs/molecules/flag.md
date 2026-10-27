@@ -10,7 +10,7 @@ Default structure follows [flag](https://atlassian.design/components/flag/usage)
 
 ## Appearance
 
-The flag is a white surface, 1px `#D0D9E6` border, 4px radius, 16px padding, max width 400px. It sits 24px from the bottom and left edges. The title is 16px Inter 600. An optional description is 14px. Success, warning, and error use the status text colors. The icon stays a navy stroke. The message still says "Saved", "Warning", or "Error".
+The flag is a white surface, 1px `#D0D9E6` border, 4px radius, 16px padding, max width 400px. It sits 24px from the bottom and left edges. The title is 16px Montserrat 600. An optional description is 14px. Success, warning, and error use the status text colors. The icon stays a navy stroke. The message still says "Saved", "Warning", or "Error".
 
 ## Rules
 

@@ -1402,3 +1402,21 @@ select.field {
   .mast { padding-top: var(--space-16); }
   .layout-3, .layout-list, .cards { grid-template-columns: 1fr; }
 }
+
+h1, h2, h3, h4, h5, h6,
+b, strong, th, button,
+.site-name,
+.footer-name,
+.btn,
+.type-page,
+.type-title,
+.nav-link[aria-current="page"],
+.field-label,
+.badge,
+.lozenge,
+.tag,
+.comment-name,
+.work-title,
+.card-value {
+  font-family: var(--font-family-emphasis);
+}

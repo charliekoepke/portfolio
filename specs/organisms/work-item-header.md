@@ -10,7 +10,7 @@ Key "CLIN-12". Title "Intake redesign". Lozenge "In progress". Badge "3" beside 
 
 ## Appearance
 
-The key is 12px `#566A80`. The title is 20px Inter 600, 8px below the key. The lozenge sits 8px after the title. Actions align to the end of the row, with 16px between them. The row is at least 64px tall. A 1px `#D0D9E6` rule closes the header.
+The key is 12px `#566A80`. The title is 20px Montserrat 600, 8px below the key. The lozenge sits 8px after the title. Actions align to the end of the row, with 16px between them. The row is at least 64px tall. A 1px `#D0D9E6` rule closes the header.
 
 ## Rules
 

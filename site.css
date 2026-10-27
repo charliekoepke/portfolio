@@ -242,31 +242,40 @@ html.js .primary-nav.is-open {
   grid-template-rows: 0.7fr 2fr 0.7fr;
 }
 
-.tone-span {
-  grid-column: 1 / -1;
-}
-
-.tone-1 { background: color-mix(in srgb, var(--color-info) 72%, var(--color-action-primary-pressed)); }
-.tone-2 { background: color-mix(in srgb, var(--color-info) 64%, var(--color-action-primary-pressed)); }
-.tone-3 { background: color-mix(in srgb, var(--color-info) 56%, var(--color-action-primary-pressed)); }
-.tone-4 { background: color-mix(in srgb, var(--color-info) 48%, var(--color-action-primary-pressed)); }
-.tone-5 { background: color-mix(in srgb, var(--color-info) 40%, var(--color-action-primary-pressed)); }
-.tone-6 { background: color-mix(in srgb, var(--color-info) 32%, var(--color-action-primary-pressed)); }
-.tone-7 { background: color-mix(in srgb, var(--color-info) 24%, var(--color-action-primary-pressed)); }
+.tone-1 { background: color-mix(in srgb, var(--color-info) 76%, var(--color-action-primary-pressed)); }
+.tone-2 { background: color-mix(in srgb, var(--color-info) 69%, var(--color-action-primary-pressed)); }
+.tone-3 { background: color-mix(in srgb, var(--color-info) 62%, var(--color-action-primary-pressed)); }
+.tone-4 { background: color-mix(in srgb, var(--color-info) 55%, var(--color-action-primary-pressed)); }
+.tone-5 { background: color-mix(in srgb, var(--color-info) 48%, var(--color-action-primary-pressed)); }
+.tone-6 { background: color-mix(in srgb, var(--color-info) 41%, var(--color-action-primary-pressed)); }
+.tone-7 { background: color-mix(in srgb, var(--color-info) 34%, var(--color-action-primary-pressed)); }
+.tone-8 { background: color-mix(in srgb, var(--color-info) 27%, var(--color-action-primary-pressed)); }
+.tone-9 { background: color-mix(in srgb, var(--color-info) 20%, var(--color-action-primary-pressed)); }
 
 .billboard .hero-inner {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   position: relative;
 }
 
 .billboard h1 {
   max-width: 100%;
   color: var(--color-text-inverse);
-  font-family: Futura, "Century Gothic", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-family: var(--font-family-emphasis);
+  font-weight: var(--font-weight-semibold);
+  font-size: 2.5rem;
   line-height: 1.1;
+}
+
+.billboard .hero-role {
+  margin: var(--space-8) 0 0;
+  max-width: none;
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-title);
 }
 
 .hero p,
@@ -460,7 +469,7 @@ textarea.field {
   padding: 0 var(--space-24);
   border: 1px solid transparent;
   border-radius: var(--radius-button);
-  font-family: inherit;
+  font-family: var(--font-family-emphasis);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-button);
@@ -583,7 +592,7 @@ textarea.field {
   border-radius: var(--radius-button);
   background: var(--color-surface-sunken);
   color: var(--color-text-primary);
-  font-family: inherit;
+  font-family: var(--font-family-emphasis);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-button);
@@ -745,6 +754,25 @@ div.project-card-media {
   outline-offset: var(--icon-stroke);
 }
 
+h1, h2, h3, h4, h5, h6,
+b, strong, th,
+.site-name,
+.primary-nav a[aria-current="page"],
+.footer-name,
+.footer-nav a,
+.field-label,
+.outline-label,
+.portrait,
+.photo-slot,
+div.project-card-media,
+.tag {
+  font-family: var(--font-family-emphasis);
+}
+
+b, strong {
+  font-weight: 700;
+}
+
 @media (min-width: 48rem) {
   .bar,
   .canvas {
@@ -792,7 +820,11 @@ div.project-card-media {
   }
 
   .billboard h1 {
-    font-size: 3rem;
+    font-size: 4.5rem;
+  }
+
+  .billboard .hero-role {
+    font-size: var(--font-size-page-title);
   }
 
   .about-hero .hero-inner {
@@ -826,7 +858,7 @@ div.project-card-media {
   }
 
   .billboard h1 {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 }
 

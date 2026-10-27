@@ -20,7 +20,7 @@ Default structure follows [avatar](https://atlassian.design/components/avatar/us
 | --- | --- | --- |
 | Radius | 50px | `--radius-button` |
 | Initials fill | `#E6EDF5` | `--color-surface-sunken` |
-| Initials text | `#12263E`, Inter 600 | `--color-brand-navy` |
+| Initials text | `#12263E`, Montserrat 600 | `--color-brand-navy` |
 | Initials size | 12px on small and medium, 14px on large | `--font-size-badge`, `--font-size-button` |
 
 A status, such as "Available", is written beside the avatar or in a lozenge. A colored dot is not the only signal.

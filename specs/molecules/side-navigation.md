@@ -10,7 +10,7 @@ Work, About, and Notes. "Work" is current.
 
 ## Appearance
 
-The column is 240px on medium and wide screens. It is a drawer on the narrow breakpoint, opened by the menu icon button. Items are 40px tall with 16px of inline padding. The current item is `#0C1B2E` Inter 600 on `#E6EDF5`. Other items are `#3D5168`. Focus uses the 2px navy ring.
+The column is 240px on medium and wide screens. It is a drawer on the narrow breakpoint, opened by the menu icon button. Items are 40px tall with 16px of inline padding. The current item is `#0C1B2E` Montserrat 600 on `#E6EDF5`. Other items are `#3D5168`. Focus uses the 2px navy ring.
 
 ## Rules
 

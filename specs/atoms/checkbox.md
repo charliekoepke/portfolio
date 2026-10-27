@@ -17,7 +17,7 @@ One option that is on or off. A group of checkboxes can also show an indetermina
 | Box size | 1rem (16px) | `--space-16` |
 | Radius | 4px | `--radius-checkbox` |
 | Gap to label | 0.5rem (8px) | `--space-8` |
-| Label | 1rem Inter 400, line height 1.5 | `--font-size-body` |
+| Label | 1rem Gafata 400, line height 1.5 | `--font-size-body` |
 | Label color | `#0C1B2E` | `--color-text-primary` |
 
 The label and the box are one hit target. The row is at least 24px tall because the label line height is 1.5.

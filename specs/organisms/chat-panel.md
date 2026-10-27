@@ -10,7 +10,7 @@ Two comments. The first is a 32px avatar "CK", the name, the time "2 Apr 2026", 
 
 ## Appearance
 
-Comments stack with 16px between them. The avatar is the medium size. The name is 16px Inter 600. The time is 12px `#566A80`, 8px after the name. The message is 16px, 8px below the name. A reply field is the textarea, 16px below the last comment, with a primary button "Add comment".
+Comments stack with 16px between them. The avatar is the medium size. The name is 16px Montserrat 600. The time is 12px `#566A80`, 8px after the name. The message is 16px, 8px below the name. A reply field is the textarea, 16px below the last comment, with a primary button "Add comment".
 
 ## Rules
 

@@ -18,7 +18,7 @@ The number 3 beside the label "Comments". A count past 99 reads "99+".
 | Min width | 1.5rem (24px) | `--space-24` |
 | Padding inline | 0.5rem (8px) | `--space-8` |
 | Radius | 50px | `--radius-button` |
-| Family | Inter | `--font-family-sans` |
+| Family | Montserrat | `--font-family-emphasis` |
 | Label size | 0.75rem (12px) | `--font-size-badge` |
 | Label weight | 600 | `--font-weight-semibold` |
 

@@ -10,7 +10,7 @@ Heading: "No projects yet." Description: "Add a case study to show it here." Pri
 
 ## Appearance
 
-The block is centered in the content area, with 32px of padding. The heading is 20px Inter 600. The description is 16px, 8px below, max 60 characters wide per line and at most two lines. The button is 24px below the description. An optional icon is a 24px navy stroke, 16px above the heading.
+The block is centered in the content area, with 32px of padding. The heading is 20px Montserrat 600. The description is 16px, 8px below, max 60 characters wide per line and at most two lines. The button is 24px below the description. An optional icon is a 24px navy stroke, 16px above the heading.
 
 ## Rules
 

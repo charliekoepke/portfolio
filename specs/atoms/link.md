@@ -14,7 +14,7 @@ Default structure follows [link](https://atlassian.design/components/link/usage)
 | --- | --- | --- |
 | Color | `#17345A` | `--color-link` |
 | Hover | `#102544` | `--color-link-hover` |
-| Size | 1rem Inter 400 | `--font-size-body` |
+| Size | 1rem Gafata 400 | `--font-size-body` |
 | Decoration | Underline | |
 | Focus | 2px `#17345A` ring, offset 2px | `--color-focus` |
 

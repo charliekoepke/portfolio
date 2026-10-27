@@ -10,7 +10,7 @@ Title: "This case study is still a draft." Description: "Publish it when the out
 
 ## Appearance
 
-Padding is 16px. Radius is 4px. The title is 16px Inter 600. The description is 16px, 8px below the title. Info uses `#E7EEF6` and `#1D4E89`. Warning and error use their status pairs. The icon is a navy stroke. The action is a link, not a primary button.
+Padding is 16px. Radius is 4px. The title is 16px Montserrat 600. The description is 16px, 8px below the title. Info uses `#E7EEF6` and `#1D4E89`. Warning and error use their status pairs. The icon is a navy stroke. The action is a link, not a primary button.
 
 ## Rules
 

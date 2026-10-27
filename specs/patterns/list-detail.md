@@ -10,7 +10,7 @@ A list of projects, 320px wide. The selected row is "Intake redesign". The detai
 
 ## Arrangement
 
-The list is 320px. The detail takes the remaining width. The gutter is 24px. The selected row uses the sunken fill and Inter 600, and `aria-current` or `aria-selected` records the selection. On the narrow breakpoint the list is the page, and choosing a row opens the detail as its own page with breadcrumbs back to the list.
+The list is 320px. The detail takes the remaining width. The gutter is 24px. The selected row uses the sunken fill and Montserrat 600, and `aria-current` or `aria-selected` records the selection. On the narrow breakpoint the list is the page, and choosing a row opens the detail as its own page with breadcrumbs back to the list.
 
 ## Rules
 
