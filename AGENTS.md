@@ -18,6 +18,8 @@ The palette is a healthcare professional navy. Pages stay light and cool. White 
 
 Hierarchy comes from type and weight. Names, headings, navigation, buttons, labels, and tags use Montserrat Emphasis. Body copy, the hero role, and biography stay in Gafata.
 
+Headings use camel case. Capitalize each word. Small words such as of, and, and a stay lowercase unless they start the heading. The Problem, The How of Solving It, and See What I’m Working On follow this. A person’s name stays as that person writes it.
+
 Principles:
 
 - One primary action in a region, labeled with a verb.
@@ -54,7 +56,13 @@ An alert and a flag stay separate. An alert sits in the page flow. A flag floats
 
 Home opens with a full-width navy billboard, then a short about section and a project preview. The hero headline is the name. The role line is “UX Designer and Researcher”. “Let's Connect” goes to `about/index.html#contact-heading`. “See What I’m Working On” previews up to three projects. With no catalog entries, that row stays `aria-hidden`.
 
-Projects opens with the same navy shade billboard. Its pattern is lines crossing at different angles, and the heading is “Projects”. Filters and cards then render from `window.PROJECTS` in `projects/catalog.js`. Each project card is horizontal: a square image on the left, then the name, a short description, and “See More”. The home preview uses those same parts with the image above the text.
+The hero is the band under the navigation. Home, About, and Projects use navy shade patterns: blocks, circles, and lines. A case study uses the plain sunken band. The organism is `specs/organisms/hero.md`.
+
+Projects opens with the same navy shade billboard. Its pattern is lines crossing at different angles, and the heading is “Projects”. Cards then render from `window.PROJECTS` in `projects/catalog.js`. Each project card is horizontal: a square image on the left, then the name, a short description, and “See More”. The home preview uses those same parts with the image above the text. The projects page has no filters.
+
+Each case study has its own folder under `projects/`, named for that study. Website Modernization is `projects/website-modernization/`. The page is `index.html` in that folder. Images and other files used in the study live in the same folder. Client and website names stay off the page. Use general wording.
+
+Every case study uses the same layout. A light grey header carries the title. A small italic note above the sections says the work is government work, so client and product names stay off the page. The body is six sections, in order: The Problem, The How of Solving It, Brainstorming, Prototyping, Testing and Iterating, and Lessons Learned. Section headings follow the camel case rule. Paragraphs span the page column. Each section is paragraphs and image examples. The pattern is `specs/patterns/case-study.md`.
 
 About uses the same navy shades as circles behind the heading “About Me”, then a biography, three image placeholders, and the contact section “Let's Connect”. Home uses the shades as a grid of blocks behind the name.
 

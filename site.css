@@ -206,7 +206,8 @@ html.js .primary-nav.is-open {
   color: var(--color-text-inverse);
 }
 
-.hero-inner {
+.hero-inner,
+.study-hero-inner {
   width: min(100%, calc(960px + var(--space-16) * 2));
   margin-inline: auto;
   padding: var(--space-64) var(--space-16);
@@ -219,10 +220,79 @@ html.js .primary-nav.is-open {
   line-height: var(--line-height-title);
 }
 
-.hero h1 {
+.hero h1,
+.study-hero h1 {
   font-size: var(--font-size-page-title);
   line-height: var(--line-height-page-title);
   max-width: 16em;
+}
+
+.study-hero {
+  background: var(--color-surface-sunken);
+  color: var(--color-text-primary);
+}
+
+.study-hero h1 {
+  margin: 0;
+  color: var(--color-brand-navy);
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.study-hero .crumbs {
+  margin-bottom: var(--space-16);
+}
+
+.study-disclosure {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-button);
+  font-style: italic;
+  line-height: var(--line-height-body);
+}
+
+.study-section {
+  margin-top: var(--space-64);
+}
+
+.study-section h2 {
+  margin: 0;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-title);
+}
+
+.study-section p {
+  margin: var(--space-16) 0 0;
+}
+
+.study-figure {
+  margin: var(--space-24) 0 0;
+}
+
+.study-media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-field);
+  background: var(--color-surface-sunken);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.study-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-field);
+}
+
+.study-figure figcaption {
+  margin-top: var(--space-8);
+  max-width: 62ch;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-button);
 }
 
 .billboard {
@@ -819,35 +889,6 @@ textarea.field {
   font-weight: var(--font-weight-semibold);
 }
 
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-8);
-  margin: var(--space-32) 0;
-}
-
-.filter-btn {
-  height: var(--space-40);
-  padding: 0 var(--space-16);
-  border: 1px solid transparent;
-  border-radius: var(--radius-button);
-  background: var(--color-surface-sunken);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-emphasis);
-  font-size: var(--font-size-button);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-button);
-}
-
-.filter-btn[aria-pressed="true"] {
-  background: var(--color-action-primary);
-  color: var(--color-text-inverse);
-}
-
-.filter-btn[aria-pressed="false"]:hover {
-  background: var(--color-border-default);
-}
-
 .project-list {
   display: grid;
   gap: var(--space-24);
@@ -927,26 +968,6 @@ div.project-card-media {
   margin-top: auto;
 }
 
-.project-card-tags,
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-8);
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  height: var(--space-24);
-  padding: 0 var(--space-8);
-  border-radius: var(--radius-button);
-  background: var(--color-surface-sunken);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-badge);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-badge);
-}
-
 .empty {
   margin-inline: auto;
   max-width: 360px;
@@ -983,10 +1004,6 @@ div.project-card-media {
   color: var(--color-text-muted);
 }
 
-.project-tags {
-  margin-top: var(--space-16);
-}
-
 .project-body {
   margin-top: var(--space-32);
 }
@@ -1021,6 +1038,7 @@ b, strong, th,
 .portrait,
 .photo-slot,
 div.project-card-media,
+.study-media,
 .tag {
   font-family: var(--font-family-emphasis);
 }
@@ -1070,9 +1088,14 @@ b, strong {
     background: transparent;
   }
 
-  .hero-inner {
+  .hero-inner,
+  .study-hero-inner {
     width: min(100%, calc(960px + var(--space-24) * 2));
     padding-inline: var(--space-24);
+  }
+
+  .study-hero h1 {
+    font-size: 4.5rem;
   }
 
   .billboard {
@@ -1102,9 +1125,14 @@ b, strong {
 @media (min-width: 64rem) {
   .bar,
   .canvas,
-  .hero-inner {
+  .hero-inner,
+  .study-hero-inner {
     width: min(100%, calc(960px + var(--space-32) * 2));
     padding-inline: var(--space-32);
+  }
+
+  .study-hero h1 {
+    font-size: 6rem;
   }
 
   .billboard h1 {
