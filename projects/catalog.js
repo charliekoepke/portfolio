@@ -9,7 +9,13 @@
 //   slug: "project-name",
 //   title: "Project title",
 //   summary: "One sentence.",
-//   topics: ["Personal"],
 //   image: "cover.jpg"
 // }
-window.PROJECTS = [];
+// Images and other files live in the case study folder, next to index.html.
+window.PROJECTS = [
+  {
+    slug: "website-modernization",
+    title: "Website Modernization",
+    summary: "Updating an antiquated webapp."
+  }
+];
