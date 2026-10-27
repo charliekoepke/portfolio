@@ -251,7 +251,8 @@ html.js .primary-nav.is-open {
   line-height: var(--line-height-body);
 }
 
-.study-section {
+.study-section + .study-section,
+.study-disclosure + .study-section {
   margin-top: var(--space-64);
 }
 

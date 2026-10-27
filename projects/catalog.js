@@ -17,5 +17,10 @@ window.PROJECTS = [
     slug: "website-modernization",
     title: "Website Modernization",
     summary: "Updating an antiquated webapp."
+  },
+  {
+    slug: "responsive-design-system",
+    title: "Responsive Design System",
+    summary: "An LLM-ready responsive design system"
   }
 ];
