@@ -28,7 +28,7 @@ Do not introduce green, red, yellow, or teal icons. Status is written in text an
 
 ## Starting set
 
-Search, menu, close, download, account, and document. Add an icon only when the action is hard to recognize without one.
+Search, menu, close, download, account, document, LinkedIn, and email. Add an icon only when the action is hard to recognize without one.
 
 ## Rules
 

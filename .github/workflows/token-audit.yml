@@ -2,6 +2,11 @@ name: Token audit
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   token-audit:

@@ -146,11 +146,18 @@ figcaption {
 
 .icon {
   display: block;
+  width: var(--icon-size);
+  height: var(--icon-size);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: var(--icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.icon-sm {
+  width: var(--space-16);
+  height: var(--space-16);
 }
 
 .btn,
@@ -163,7 +170,7 @@ figcaption {
   font-family: inherit;
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--line-height-button);
   cursor: pointer;
 }
 
@@ -255,8 +262,8 @@ figcaption {
 .check.is-focus .check-box,
 .radio.is-focus .radio-mark,
 .toggle.is-focus .toggle-track {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
+  outline: var(--icon-stroke) solid var(--color-focus);
+  outline-offset: var(--icon-stroke);
 }
 
 .row {
@@ -293,7 +300,7 @@ figcaption {
   border-radius: var(--radius-button);
   font-size: var(--font-size-badge);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--line-height-badge);
 }
 
 .badge-neutral {
@@ -323,7 +330,7 @@ figcaption {
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
-  min-height: 24px;
+  min-height: var(--space-24);
   color: var(--color-text-primary);
 }
 
@@ -383,16 +390,16 @@ figcaption {
 }
 
 .check input:checked + .check-box::after {
-  width: 8px;
+  width: var(--space-8);
   height: 4px;
-  border-left: 2px solid var(--color-text-inverse);
-  border-bottom: 2px solid var(--color-text-inverse);
+  border-left: var(--icon-stroke) solid var(--color-text-inverse);
+  border-bottom: var(--icon-stroke) solid var(--color-text-inverse);
   transform: translateY(-1px) rotate(-45deg);
 }
 
 .check input:indeterminate + .check-box::after {
-  width: 8px;
-  height: 2px;
+  width: var(--space-8);
+  height: var(--icon-stroke);
   background: var(--color-text-inverse);
 }
 
@@ -606,7 +613,7 @@ textarea.field {
   padding: 0 var(--space-8);
   font-size: var(--font-size-badge);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--line-height-badge);
 }
 
 .lozenge {
@@ -627,8 +634,8 @@ textarea.field {
 .lozenge-info { background: var(--color-info-surface); color: var(--color-info); }
 
 .tag-remove {
-  width: 16px;
-  height: 16px;
+  width: var(--space-16);
+  height: var(--space-16);
   padding: 0;
   border: 0;
   background: transparent;
@@ -652,7 +659,7 @@ textarea.field {
 
 .spinner {
   box-sizing: border-box;
-  border: 2px solid var(--color-border-default);
+  border: var(--icon-stroke) solid var(--color-border-default);
   border-top-color: var(--color-action-primary);
   border-radius: var(--radius-button);
   animation: spin var(--motion-duration-large) linear infinite;
@@ -677,7 +684,7 @@ textarea.field {
   height: var(--space-40);
   padding: 0 var(--space-16);
   border: 0;
-  border-bottom: 2px solid transparent;
+  border-bottom: var(--icon-stroke) solid transparent;
   background: transparent;
   color: var(--color-text-secondary);
   font-family: inherit;
@@ -761,7 +768,7 @@ textarea.field {
 .blanket {
   position: absolute;
   inset: 0;
-  background: rgb(12 27 46 / var(--opacity-blanket));
+  background: color-mix(in srgb, var(--color-text-primary) calc(var(--opacity-blanket) * 100%), transparent);
 }
 
 .dialog {
@@ -778,7 +785,7 @@ textarea.field {
 .panel h4,
 .empty h4 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: var(--font-size-title);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-title);
 }
@@ -886,7 +893,7 @@ textarea.field {
 }
 
 .control.has-start .field {
-  padding-left: 48px;
+  padding-left: var(--space-48);
 }
 
 .field-icon,
@@ -963,7 +970,7 @@ textarea.field {
 }
 
 .edit-read {
-  border: 2px solid transparent;
+  border: var(--icon-stroke) solid transparent;
   background: transparent;
   font: inherit;
   color: inherit;
@@ -1070,7 +1077,7 @@ textarea.field {
   display: flex;
   align-items: center;
   gap: var(--space-24);
-  height: 64px;
+  height: var(--space-64);
   padding: 0 var(--space-32);
   background: var(--color-surface-default);
   border-bottom: 1px solid var(--color-border-default);
@@ -1089,6 +1096,53 @@ textarea.field {
 
 .nav-link[aria-current="page"] {
   color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.site-footer {
+  background: var(--color-surface-default);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+  padding: var(--space-32);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.icon-link,
+.icon-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-40);
+  height: var(--space-40);
+  border-radius: var(--radius-button);
+  color: var(--color-action-primary);
+  text-decoration: none;
+}
+
+.icon-link:hover,
+.icon-link.is-hover {
+  background: var(--color-surface-sunken);
+  color: var(--color-action-primary-hover);
+}
+
+.icon-slot {
+  border: 1px dashed var(--color-border-default);
+  background: var(--color-surface-sunken);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-badge);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -1149,7 +1203,7 @@ textarea.field {
   justify-content: space-between;
   gap: var(--space-16);
   align-items: center;
-  min-height: 64px;
+  min-height: var(--space-64);
   padding-bottom: var(--space-16);
   border-bottom: 1px solid var(--color-border-default);
   width: min(100%, 720px);
@@ -1163,7 +1217,7 @@ textarea.field {
 
 .work-title {
   margin: var(--space-8) 0 0;
-  font-size: 1.25rem;
+  font-size: var(--font-size-title);
   font-weight: var(--font-weight-semibold);
   display: flex;
   flex-wrap: wrap;
@@ -1190,7 +1244,7 @@ textarea.field {
   background: var(--color-surface-page);
   border: 1px solid var(--color-border-default);
   padding: var(--space-16);
-  min-height: 80px;
+  min-height: var(--space-80);
 }
 
 .stack {
@@ -1279,7 +1333,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background: rgb(12 27 46 / var(--opacity-blanket));
+  background: color-mix(in srgb, var(--color-text-primary) calc(var(--opacity-blanket) * 100%), transparent);
 }
 
 select.field {
@@ -1288,7 +1342,7 @@ select.field {
 }
 
 .btn .spinner {
-  border-color: rgb(247 250 252 / 0.4);
+  border-color: color-mix(in srgb, var(--color-text-inverse) calc(var(--opacity-blanket) * 100%), transparent);
   border-top-color: var(--color-text-inverse);
 }
 
@@ -1300,7 +1354,7 @@ select.field {
 }
 
 .motion-dot.is-moved {
-  transform: translateX(80px);
+  transform: translateX(var(--space-80));
 }
 
 .visually-hidden {

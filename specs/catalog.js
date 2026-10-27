@@ -8,12 +8,14 @@
     document: '<path d="M7 3 h7 l4 4 v14 H7 z M14 3 v4 h4"></path>',
     chevron: '<path d="M6 9 l6 6 6-6"></path>',
     chevronRight: '<path d="M9 6 l6 6 -6 6"></path>',
-    external: '<path d="M7 17 L17 7 M9 7 h8 v8"></path>'
+    external: '<path d="M7 17 L17 7 M9 7 h8 v8"></path>',
+    linkedin: '<rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 11 v5"></path><path d="M8 8 h0.01"></path><path d="M12 16 v-3.5 a2.5 2.5 0 0 1 5 0 V16"></path>',
+    mail: '<rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 7 l9 6 9-6"></path>'
   };
 
   function icon(name, size) {
-    const px = size || 24;
-    return '<svg class="icon" viewBox="0 0 24 24" width="' + px + '" height="' + px + '" aria-hidden="true" focusable="false">' + paths[name] + "</svg>";
+    const small = size && size !== 24;
+    return '<svg class="icon' + (small ? " icon-sm" : "") + '" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + paths[name] + "</svg>";
   }
 
   function state(label, html, wide) {
@@ -219,7 +221,8 @@
         specimen("content-panel", "Content panel", state("With a link", '<section class="panel"><p class="type-title">Role</p><p>Product design for clinical tools. <a class="text-link" href="#content-panel">Read the bio</a></p></section>'), level),
         specimen("chat-panel", "Chat panel", state("Comments", '<div aria-label="Comments"><article class="comment"><span class="avatar avatar-md" aria-hidden="true">CK</span><div><p class="comment-name">CK <time datetime="2026-04-02">2 Apr 2026</time></p><p>The intake flow needs a quieter confirmation.</p></div></article><article class="comment"><span class="avatar avatar-md" aria-hidden="true">JD</span><div><p class="comment-name">John Doe <time datetime="2026-04-03">3 Apr 2026</time></p><p>The confirmation can stay on this page.</p></div></article>' + field("comment", "Comment", '<textarea class="field" id="comment"></textarea>', "") + '<div class="form-actions">' + button("primary", "Add comment") + "</div></div>", true), level),
         specimen("dashboard-card", "Dashboard card", state("With a lozenge", '<article class="card"><p class="card-label">Projects</p><p class="card-value">6</p>' + lozenge("info", "In progress") + "</article>") + state("With a badge", '<article class="card"><p class="card-label">Projects</p><p class="card-value count-line">6 <span class="badge badge-neutral">+2</span></p></article>'), level),
-        specimen("work-item-header", "Work item header", state("With status and notes", '<header class="work-head"><div><p class="work-key">CLIN-12</p><p class="work-title"><a class="text-link" href="#work-item-header">Intake redesign</a> ' + lozenge("info", "In progress") + ' <span class="count-line">Notes <span class="badge badge-navy">3</span></span></p></div>' + button("primary", "View project") + "</header>", true), level)
+        specimen("work-item-header", "Work item header", state("With status and notes", '<header class="work-head"><div><p class="work-key">CLIN-12</p><p class="work-title"><a class="text-link" href="#work-item-header">Intake redesign</a> ' + lozenge("info", "In progress") + ' <span class="count-line">Notes <span class="badge badge-navy">3</span></span></p></div>' + button("primary", "View project") + "</header>", true), level),
+        specimen("footer", "Footer", state("Contact icons", '<footer class="site-footer"><div class="footer-bar"><nav class="footer-links" aria-label="Footer"><a class="icon-link" href="#footer">' + icon("linkedin") + '<span class="visually-hidden">LinkedIn</span></a><a class="icon-link" href="#footer">' + icon("mail") + '<span class="visually-hidden">Email</span></a><span class="icon-slot">Icon</span></nav></div></footer>', true), level)
       ].join("");
     },
     patterns: function (level) {
@@ -266,7 +269,7 @@
         return '<div class="swatch"><div class="swatch-chip" style="background:var(' + item[1] + ')"></div><p>' + item[0] + "<br>" + item[1] + "</p></div>";
       }).join("");
       const spaces = [8, 16, 24, 32, 40, 48, 64, 80, 96].map(function (step) {
-        return '<div class="space-row"><div class="space-bar" style="width:' + step + 'px"></div><span>--space-' + step + " · " + step + "px</span></div>";
+        return '<div class="space-row"><div class="space-bar" style="width:var(--space-' + step + ')"></div><span>--space-' + step + " · " + step + "px</span></div>";
       }).join("");
       return [
         specimen("color", "Color", state("Palette", '<div class="swatches">' + swatches + "</div>", true), level),
@@ -277,7 +280,7 @@
           state("Button label, 14px", button("primary", "Save")),
           state("Badge label, 12px", '<span class="badge badge-neutral">3</span>')
         ].join(""), level),
-        specimen("spacing", "Spacing", state("8px scale", '<div class="stack" style="gap:16px">' + spaces + "</div>", true), level),
+        specimen("spacing", "Spacing", state("8px scale", '<div class="stack" style="gap:var(--space-16)">' + spaces + "</div>", true), level),
         specimen("radius", "Radius", [
           state("Button, 50px", button("primary", "Save")),
           state("Checkbox, 4px", '<span class="check-box" style="position:static"></span>'),
@@ -288,10 +291,10 @@
           state("Raised", '<div class="panel shadow-raised"><p>Raised card</p></div>'),
           state("Overlay", '<div class="panel shadow-overlay"><p>Dropdown, popup, flag, or modal</p></div>')
         ].join(""), level),
-        specimen("motion", "Motion", state("Durations", '<div class="row"><button type="button" class="btn btn-secondary" data-motion="100ms">Play 100ms</button><button type="button" class="btn btn-secondary" data-motion="350ms">Play 350ms</button><button type="button" class="btn btn-secondary" data-motion="700ms">Play 700ms</button><span class="motion-dot" id="motion-dot"></span></div>', true), level),
+        specimen("motion", "Motion", state("Durations", '<div class="row"><button type="button" class="btn btn-secondary" data-motion="var(--motion-duration-small)">Play 100ms</button><button type="button" class="btn btn-secondary" data-motion="var(--motion-duration-medium)">Play 350ms</button><button type="button" class="btn btn-secondary" data-motion="var(--motion-duration-large)">Play 700ms</button><span class="motion-dot" id="motion-dot"></span></div>', true), level),
         specimen("opacity", "Opacity", state("Modal blanket, 40 percent", '<div class="stage"><div class="blanket"></div><div class="dialog"><p>The dialog on the blanket is fully opaque.</p></div></div>', true), level),
         specimen("z-index", "Z-index", state("Layer scale", '<ol class="type-body"><li>100 Card</li><li>200 Navigation</li><li>300 Dialog</li><li>400 Modal</li><li>500 Flag</li><li>600 Spotlight</li><li>700 Tooltip</li></ol>'), level),
-        specimen("iconography", "Iconography", state("Starting set, action navy", '<div class="row" style="color:var(--color-action-primary)">' + ["search", "menu", "close", "download", "account", "document"].map(function (name) { return icon(name); }).join("") + "</div>") + state("On navy", '<div class="row" style="background:var(--color-action-primary);color:var(--color-text-inverse);padding:16px">' + icon("search") + "</div>") + state("Disabled", '<div class="row" style="color:var(--color-disabled-text)">' + icon("search") + "</div>"), level),
+        specimen("iconography", "Iconography", state("Starting set, action navy", '<div class="row" style="color:var(--color-action-primary)">' + ["search", "menu", "close", "download", "account", "document"].map(function (name) { return icon(name); }).join("") + "</div>") + state("On navy", '<div class="row" style="background:var(--color-action-primary);color:var(--color-text-inverse);padding:var(--space-16)">' + icon("search") + "</div>") + state("Disabled", '<div class="row" style="color:var(--color-disabled-text)">' + icon("search") + "</div>"), level),
         specimen("borders", "Borders", [
           state("Divider", '<div style="width:240px;border-bottom:1px solid var(--color-border-default)"></div>'),
           state("Control border", '<input class="field" aria-label="Border sample" tabindex="-1">'),
@@ -312,7 +315,7 @@
       }).join("");
       return [
         specimen("color-tokens", "Color tokens", state("Each chip uses its token", '<div class="swatches">' + colorHtml + "</div>", true), level),
-        specimen("spacing-tokens", "Spacing tokens", state("Width equals the token", '<div class="stack" style="gap:16px">' + spaceHtml + "</div>", true), level),
+        specimen("spacing-tokens", "Spacing tokens", state("Width equals the token", '<div class="stack" style="gap:var(--space-16)">' + spaceHtml + "</div>", true), level),
         specimen("type-tokens", "Type tokens", state("Inter", '<p class="type-page">Page title</p><p class="type-title">Section title</p><p class="type-body">Body</p>', true), level),
         specimen("other-tokens", "Radius, elevation, motion, layers", state("Named values", '<ul class="type-body"><li>--radius-button 50px, --radius-checkbox 4px, --radius-field 4px</li><li>--elevation-shadow-raised and --elevation-shadow-overlay</li><li>--motion-duration-small 100ms, medium 350ms, large 700ms</li><li>--opacity-blanket 0.4</li><li>--z-card 100 through --z-tooltip 700</li></ul>'), level)
       ].join("");

@@ -7,7 +7,12 @@
  * - 1.4.3 Contrast (Minimum): 4.5:1 for text
  * - 1.4.11 Non-text Contrast: 3:1 for control boundaries and the focus ring
  *
- * GitHub Actions runs this after a push.
+ * GitHub Actions runs this on a pull request into main, and again when that
+ * change is pushed to main.
+ *
+ * HTML pages, preview.css, and catalog.js must use those tokens for any
+ * value the design system already names. A literal that matches a token
+ * fails the audit.
  */
 
 const fs = require("fs");
@@ -175,6 +180,162 @@ function checkPublishedRatios(cssTokens) {
   }
 }
 
+function toPixels(value) {
+  const match = normalize(value).match(/^(-?[\d.]+)(px|rem)$/);
+  if (!match) return null;
+  const amount = Number(match[1]);
+  return match[2] === "rem" ? amount * 16 : amount;
+}
+
+function addLookup(map, key, tokenName) {
+  if (!map.has(key)) map.set(key, []);
+  const names = map.get(key);
+  if (!names.includes(tokenName)) names.push(tokenName);
+}
+
+function tokenLookups(cssTokens) {
+  const color = new Map();
+  const space = new Map();
+  const fontSize = new Map();
+  const radius = new Map();
+  const stroke = new Map();
+  const motion = new Map();
+  const weight = new Map();
+  const leading = new Map();
+
+  for (const [name, value] of cssTokens) {
+    const hex = hexOf(value);
+    if (hex && name.startsWith("--color-")) addLookup(color, hex, name);
+    const pixels = toPixels(value);
+    if (pixels !== null) {
+      const key = String(pixels);
+      if (name.startsWith("--space-") || name === "--icon-size") addLookup(space, key, name);
+      if (name.startsWith("--font-size-")) addLookup(fontSize, key, name);
+      if (name.startsWith("--radius-")) addLookup(radius, key, name);
+      if (name === "--icon-stroke") addLookup(stroke, key, name);
+    }
+    if (name.startsWith("--motion-duration-")) addLookup(motion, normalize(value), name);
+    if (name.startsWith("--font-weight-")) addLookup(weight, normalize(value), name);
+    if (name.startsWith("--line-height-")) addLookup(leading, normalize(value), name);
+  }
+  return { color, space, fontSize, radius, stroke, motion, weight, leading };
+}
+
+function propertyGroup(property) {
+  if (/^(color|background|background-color|border-color|outline-color|fill|stroke|caret-color)$/.test(property)) {
+    return "color";
+  }
+  if (property === "border-radius") return "radius";
+  if (property === "font-size") return "fontSize";
+  if (property === "font-weight") return "weight";
+  if (property === "line-height") return "leading";
+  if (property === "stroke-width" || property === "outline-width" || property === "outline-offset") return "stroke";
+  if (property === "transition" || property === "transition-duration" || property === "animation") return "motion";
+  if (
+    /^(margin|padding|gap|width|height|top|right|bottom|left|inset|column-gap|row-gap|transform)$/.test(property) ||
+    /^(margin|padding|min|max)-(width|height|inline|block|top|right|bottom|left)$/.test(property) ||
+    /^(margin|padding)-(inline|block|top|right|bottom|left)$/.test(property)
+  ) {
+    return "space";
+  }
+  if (property.startsWith("border")) return "border";
+  if (property === "outline") return "stroke";
+  return null;
+}
+
+function literalsIn(value, group, lookups) {
+  const found = [];
+  if (group === "color" || group === "border") {
+    for (const match of value.matchAll(/#([0-9a-f]{6})\b/gi)) {
+      found.push([`#${match[1].toUpperCase()}`, lookups.color]);
+    }
+    for (const match of value.matchAll(/rgba?\(\s*(\d+)\s*[,\s]\s*(\d+)\s*[,\s]\s*(\d+)/gi)) {
+      const hex = [match[1], match[2], match[3]]
+        .map((channel) => Number(channel).toString(16).padStart(2, "0"))
+        .join("");
+      found.push([`#${hex.toUpperCase()}`, lookups.color]);
+    }
+  }
+  if (group === "space" || group === "fontSize" || group === "radius" || group === "stroke" || group === "border") {
+    const table = { space: lookups.space, fontSize: lookups.fontSize, radius: lookups.radius, stroke: lookups.stroke, border: lookups.stroke };
+    for (const match of value.matchAll(/(-?[\d.]+)(px|rem)\b/g)) {
+      const pixels = toPixels(match[0]);
+      if (pixels === null) continue;
+      found.push([String(pixels), table[group]]);
+    }
+  }
+  if (group === "motion") {
+    for (const match of value.matchAll(/[\d.]+ms\b/g)) {
+      found.push([normalize(match[0]), lookups.motion]);
+    }
+  }
+  if (group === "weight") found.push([normalize(value), lookups.weight]);
+  if (group === "leading") found.push([normalize(value.split(/\s+/)[0]), lookups.leading]);
+  return found;
+}
+
+function checkDeclaration(fileLabel, lineNumber, property, value, lookups) {
+  const group = propertyGroup(property);
+  if (!group) return;
+  for (const [key, table] of literalsIn(value, group, lookups)) {
+    const names = table.get(key);
+    if (!names || names.length === 0) continue;
+    const used = names.some((name) => value.includes(`var(${name})`));
+    if (used) continue;
+    const suggestion = names.map((name) => `var(${name})`).join(" or ");
+    fail(`${fileLabel}:${lineNumber} sets ${property} to a token value. Use ${suggestion}`);
+  }
+}
+
+function checkCssSource(fileLabel, source, lookups) {
+  const lines = source.replace(/\/\*[\s\S]*?\*\//g, "").split("\n");
+  lines.forEach((line, index) => {
+    const match = line.match(/([a-z-]+)\s*:\s*([^;{}]+)/);
+    if (!match) return;
+    checkDeclaration(fileLabel, index + 1, match[1], match[2], lookups);
+  });
+}
+
+function pageFiles(dir, acc) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      pageFiles(full, acc);
+      continue;
+    }
+    if (entry.name === "tokens.css" || entry.name === "token-audit.js") continue;
+    if (/\.(html|css|js)$/.test(entry.name)) acc.push(full);
+  }
+  return acc;
+}
+
+function checkPages(cssTokens) {
+  const lookups = tokenLookups(cssTokens);
+  const siteRoot = path.resolve(specsRoot, "..");
+  for (const filePath of pageFiles(siteRoot, [])) {
+    const source = read(filePath);
+    const label = path.relative(siteRoot, filePath);
+    if (filePath.endsWith(".css")) {
+      checkCssSource(label, source, lookups);
+      continue;
+    }
+    const lines = source.split("\n");
+    lines.forEach((line, index) => {
+      for (const match of line.matchAll(/style\s*=\s*"([^"]*)"/g)) {
+        for (const decl of match[1].split(";")) {
+          const parts = decl.match(/^\s*([a-z-]+)\s*:\s*(.+)$/);
+          if (!parts) continue;
+          checkDeclaration(label, index + 1, parts[1], parts[2], lookups);
+        }
+      }
+      for (const match of line.matchAll(/data-motion\s*=\s*"([^"]*)"/g)) {
+        checkDeclaration(label, index + 1, "transition-duration", match[1], lookups);
+      }
+    });
+  }
+}
+
 const cssTokens = parseCss(read(cssPath));
 const documented = new Map();
 
@@ -239,6 +400,7 @@ const boundaryPairs = [
 checkContrast(cssTokens, textPairs, 4.5, "1.4.3");
 checkContrast(cssTokens, boundaryPairs, 3, "1.4.11");
 checkPublishedRatios(cssTokens);
+checkPages(cssTokens);
 
 if (failures.length > 0) {
   console.error(`Token audit failed with ${failures.length} finding${failures.length === 1 ? "" : "s"}.`);
@@ -249,5 +411,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Token audit passed. ${cssTokens.size} tokens match the specs. Text contrast meets WCAG 2.1 1.4.3 and control boundaries meet 1.4.11.`
+  `Token audit passed. ${cssTokens.size} tokens match the specs. Page styles use those tokens. Text contrast meets WCAG 2.1 1.4.3 and control boundaries meet 1.4.11.`
 );
