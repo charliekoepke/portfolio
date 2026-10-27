@@ -6,9 +6,10 @@
 
   var base = list.getAttribute("data-base") || "";
   var limit = Number(list.getAttribute("data-limit")) || 0;
-  if (limit && projects.length === 0) return;
+  if (projects.length === 0) return;
 
   var active = "all";
+  var emptyBox = document.getElementById("project-empty");
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (char) {
@@ -33,18 +34,15 @@
     var heading = limit ? "h3" : "h2";
     var title = escapeHtml(project.title);
     var href = encodeURI(base + project.slug + "/index.html");
-    return '<article class="project-card">' +
-      media +
+    return '<li class="project-card">' +
       '<div class="project-card-body">' +
       "<" + heading + ">" + title + "</" + heading + ">" +
       "<p>" + escapeHtml(project.summary) + "</p>" +
       tags +
       '<a class="btn btn-primary" href="' + href + '">See More<span class="visually-hidden"> about ' + title + "</span></a>" +
-      "</div></article>";
-  }
-
-  function empty(title, text, action) {
-    return '<div class="empty"><h2>' + title + "</h2><p>" + text + "</p>" + (action || "") + "</div>";
+      "</div>" +
+      media +
+      "</li>";
   }
 
   function renderFilters() {
@@ -74,13 +72,18 @@
     var shown = limit ? visible.slice(0, limit) : visible;
     if (shown.length === 0) {
       list.classList.add("is-empty");
-      list.innerHTML = active === "all"
-        ? empty("No projects yet.", "Project write-ups will be listed here.")
-        : empty("No projects match.", "Clear the filter to see every project.", '<button type="button" class="btn btn-primary" data-clear>Clear filters</button>');
+      list.innerHTML = "";
+      if (emptyBox) {
+        emptyBox.hidden = false;
+        emptyBox.innerHTML = active === "all"
+          ? "<h2>No projects yet.</h2><p>Project write-ups will be listed here.</p>"
+          : '<h2>No projects match.</h2><p>Clear the filter to see every project.</p><button type="button" class="btn btn-primary" data-clear>Clear filters</button>';
+      }
       return;
     }
     list.classList.remove("is-empty");
     list.removeAttribute("aria-hidden");
+    if (emptyBox) emptyBox.hidden = true;
     list.innerHTML = shown.map(card).join("");
   }
 
@@ -98,7 +101,7 @@
     });
   }
 
-  list.addEventListener("click", function (event) {
+  (list.parentElement || list).addEventListener("click", function (event) {
     var clear = event.target.closest("[data-clear]");
     if (!clear) return;
     setActive("all");

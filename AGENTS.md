@@ -8,7 +8,7 @@ Charlie Koepke’s portfolio is a personal site for people reviewing UX design a
 
 The site has three jobs. It introduces the practice, it shows real projects, and it makes contact straightforward.
 
-It is a static multi-page site with no framework and no build step. Home is `index.html`. Projects live under `projects/`, with the list at `projects/index.html` and one folder per project. About is `about/index.html`. Shared images live in `images/`. Paths from Home use `images/...`. Paths from About and Projects use `../images/...`.
+It is a static multi-page site with no framework and no build step. Home is `index.html`. Projects live under `projects/`, with the list at `projects/index.html` and one folder per project. About is `about/index.html`. Shared images live in `images/`. Paths from Home use `images/...`. Paths from About and Projects use `../images/...`. The site icon is `images/favicon.ico`, linked from every page.
 
 GitHub Pages publishes the repository root at `https://charliekoepke.github.io/portfolio/`. `.nojekyll` keeps Pages from running Jekyll. The page title on Home is `Charlie Koepke - Portfolio`. Other pages use `{Page} · Charlie Koepke - Portfolio`. The header uses the same site name.
 
@@ -54,9 +54,9 @@ An alert and a flag stay separate. An alert sits in the page flow. A flag floats
 
 Home opens with a full-width navy billboard, then a short about section and a project preview. The hero headline is the name. The role line is “UX Designer and Researcher”. “Let's Connect” goes to `about/index.html#contact-heading`. “See What I’m Working On” previews up to three projects. With no catalog entries, that row stays `aria-hidden`.
 
-Projects renders filters and cards from `window.PROJECTS` in `projects/catalog.js`.
+Projects opens with the same navy shade billboard. Its pattern is lines crossing at different angles, and the heading is “Projects”. Filters and cards then render from `window.PROJECTS` in `projects/catalog.js`. Each project card is horizontal: a square image on the left, then the name, a short description, and “See More”. The home preview uses those same parts with the image above the text.
 
-About uses the same navy shades as circles behind the heading “About Me”, then a biography, three image placeholders, and the contact section “Let's Connect”.
+About uses the same navy shades as circles behind the heading “About Me”, then a biography, three image placeholders, and the contact section “Let's Connect”. Home uses the shades as a grid of blocks behind the name.
 
 The header is on every page: a sticky white bar on wide screens, and a menu button with a side drawer below 48rem. Links are Home, Projects, and About, in that order, with `aria-current="page"` on the current page. Escape and the blanket close the drawer.
 
@@ -95,6 +95,8 @@ Below 48rem the primary navigation moves into the side drawer and the menu butto
 ## Implementation standards
 
 Public pages are HTML, `site.css`, and `site.js`. They load `specs/tokens.css`. Catalog pages load `specs/tokens.css`, `specs/preview.css`, and `specs/catalog.js`.
+
+A branch stays centered on one page. Shared updates, such as the header, footer, or favicon, can be included when that page needs them. Pull request descriptions use `.github/pull_request_template.md`: a bold “Updates” heading, then a list of what changed on the branch.
 
 `components.html` is the catalog of the current components. It loads the specimens and the preview styles, then reads each description from the matching spec. The description is the first paragraph after the title. Keep `components.html` free of copied markup and copied descriptions.
 

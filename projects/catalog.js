@@ -2,6 +2,8 @@
 // Images and other files for that project live in the same folder.
 // Add an entry here to show its card. Each card is a square image,
 // the project name, a short description, and a See More link.
+// The projects list places the image on the left. The home preview
+// places that same image above the text.
 //
 // {
 //   slug: "project-name",
