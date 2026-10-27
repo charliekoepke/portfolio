@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home · Portfolio</title>
+  <title>Charlie Koepke - Portfolio</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <link rel="stylesheet" href="specs/tokens.css">
   <link rel="stylesheet" href="site.css">
@@ -13,7 +13,7 @@
   <header class="mast">
     <div class="nav-blanket"></div>
     <div class="bar">
-      <a class="site-name" href="index.html">Portfolio</a>
+      <a class="site-name" href="index.html">Charlie Koepke - Portfolio</a>
       <button type="button" class="menu-button" aria-expanded="false" aria-controls="primary-nav">
         <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
         <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
@@ -27,31 +27,57 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero billboard" aria-labelledby="hero-title">
+      <div class="billboard-blocks" aria-hidden="true">
+        <span class="tone-1"></span>
+        <span class="tone-2"></span>
+        <span class="tone-3"></span>
+        <span class="tone-4 tone-span"></span>
+        <span class="tone-5"></span>
+        <span class="tone-6"></span>
+        <span class="tone-7"></span>
+      </div>
       <div class="hero-inner">
-        <h1 id="hero-title">Personal and professional projects</h1>
-        <p>A collection of work from across my career.</p>
-        <h2>On this site</h2>
-        <ul class="outline">
-          <li><span class="outline-label">Home</span> A rundown of the portfolio.</li>
-          <li><span class="outline-label">Projects</span> The work.</li>
-          <li><span class="outline-label">About</span> Background and contact.</li>
-        </ul>
+        <h1 id="hero-title">Charlie Koepke - UX Designer and Researcher</h1>
       </div>
     </section>
     <div class="canvas canvas-home">
-      <section class="home-section" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-        <p>A short introduction to the person behind the work. The longer version is on the about page.</p>
-        <p class="section-action"><a class="btn btn-primary" href="about/index.html">Read about me</a></p>
+      <section class="home-section home-intro" aria-labelledby="about-heading">
+        <div class="portrait"><span>Photo</span></div>
+        <div class="home-intro-copy">
+          <h2 id="about-heading">About</h2>
+          <p class="home-intro-lead">I’m a UX Designer and Researcher, where I lead design across research, information architecture, interface design, and design systems.</p>
+          <p class="section-action"><a class="btn btn-primary" href="about/index.html#contact-heading">Let's Connect</a></p>
+        </div>
       </section>
       <section class="home-section" aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Projects</h2>
+        <h2 id="projects-heading">See What I’m Working On</h2>
         <p>A preview of the personal and professional projects. The full list is on the projects page.</p>
         <div class="preview-row" id="project-preview" data-base="projects/" data-limit="3" aria-hidden="true">
-          <div class="wire"></div>
-          <div class="wire"></div>
-          <div class="wire"></div>
+          <article class="project-card">
+            <div class="project-card-media"><span>Image</span></div>
+            <div class="project-card-body">
+              <h3>Project name</h3>
+              <p>A short description of the project.</p>
+              <span class="btn btn-primary">See More</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-media"><span>Image</span></div>
+            <div class="project-card-body">
+              <h3>Project name</h3>
+              <p>A short description of the project.</p>
+              <span class="btn btn-primary">See More</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-media"><span>Image</span></div>
+            <div class="project-card-body">
+              <h3>Project name</h3>
+              <p>A short description of the project.</p>
+              <span class="btn btn-primary">See More</span>
+            </div>
+          </article>
         </div>
         <p class="section-action"><a class="btn btn-primary" href="projects/index.html">View projects</a></p>
       </section>
@@ -59,15 +85,23 @@
   </main>
   <footer class="site-footer">
     <div class="bar footer-bar">
-      <nav class="footer-links" aria-label="Footer">
-        <a class="icon-link" href="https://www.linkedin.com/in/charliejunkoepke/">
-          <img src="images/linkedin.webp" alt="LinkedIn">
-        </a>
-        <a class="icon-link" href="mailto:charliejunkoepke@gmail.com">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
-          <span class="visually-hidden">Email</span>
-        </a>
-        <span class="icon-slot">Icon</span>
+      <div class="footer-identity">
+        <p class="footer-name">Charlie Koepke</p>
+        <nav class="footer-links" aria-label="Contact">
+          <a class="icon-link" href="https://www.linkedin.com/in/charliejunkoepke/">
+            <img src="images/linkedin.webp" alt="LinkedIn">
+          </a>
+          <a class="icon-link" href="mailto:charliejunkoepke@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+            <span class="visually-hidden">Email</span>
+          </a>
+          <span class="icon-slot">Icon</span>
+        </nav>
+      </div>
+      <nav class="footer-nav" aria-label="Site">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects/index.html">Projects</a>
+        <a href="about/index.html">About</a>
       </nav>
     </div>
   </footer>
