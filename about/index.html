@@ -27,13 +27,16 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero about-hero" aria-labelledby="about-title">
+    <section class="hero billboard about-hero" aria-labelledby="about-title">
+      <div class="billboard-blocks" aria-hidden="true">
+        <span class="tone-1"></span>
+        <span class="tone-4"></span>
+        <span class="tone-8"></span>
+        <span class="tone-5"></span>
+        <span class="tone-2"></span>
+      </div>
       <div class="hero-inner">
-        <div class="portrait"><span>Photo</span></div>
-        <div>
-          <h1 id="about-title">About</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+        <h1 id="about-title">About Me</h1>
       </div>
     </section>
     <div class="canvas">
@@ -49,8 +52,12 @@
         </ul>
       </section>
       <section class="about-contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <form class="form" id="contact-form">
+        <h2 id="contact-heading">Let's Connect</h2>
+        <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="post">
+          <input type="hidden" name="access_key" value="83ddcf6f-9b85-473d-8971-9aca50e0a9d8">
+          <input type="hidden" name="subject" value="Portfolio inquiry">
+          <input type="hidden" name="redirect" value="https://charliekoepke.github.io/portfolio/about/?sent=1">
+          <input class="form-honey" type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true">
           <div class="field-block">
             <label class="field-label" for="contact-name">Name</label>
             <input class="field" id="contact-name" name="name" autocomplete="name">
@@ -68,6 +75,17 @@
             <button class="btn btn-primary" type="submit">Send message</button>
           </div>
         </form>
+        <div class="alert alert-success" id="form-alert" role="status" hidden>
+          <div class="alert-row">
+            <div>
+              <p class="alert-title" id="form-alert-title"></p>
+              <p class="alert-body" id="form-alert-body"></p>
+            </div>
+            <button type="button" class="alert-dismiss" aria-label="Dismiss">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button>
+          </div>
+        </div>
       </section>
     </div>
   </main>
