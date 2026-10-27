@@ -10,7 +10,7 @@ Previous, pages 1 through 5, Next. Page 1 is current.
 
 ## Appearance
 
-The group is a nav labeled "Pagination". Page controls are 40px circles, the same radius as the icon button. The current page uses the action fill and inverse text. Other pages are secondary buttons. Previous and Next are secondary buttons with those words. Gaps are 8px.
+The group is a nav labeled "Pagination". Page numbers sit in the center of 32px circles. The current page uses the action fill and inverse text. Other pages are secondary buttons. Previous and Next are secondary buttons with those words. Gaps are 8px.
 
 ## Rules
 

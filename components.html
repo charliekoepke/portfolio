@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Components · Charlie Koepke - Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gafata&family=Montserrat:wght@600;700&display=swap">
+  <link rel="stylesheet" href="specs/tokens.css">
+  <link rel="stylesheet" href="specs/preview.css">
+</head>
+<body data-groups="atoms,molecules,organisms,patterns">
+  <header class="mast">
+    <p class="mast-back"><a href="index.html">Charlie Koepke - Portfolio</a></p>
+    <h1>Components</h1>
+    <nav class="folder-nav" aria-label="Spec folders">
+      <a href="specs/foundations/index.html">Foundations</a>
+      <a href="specs/tokens/index.html">Tokens</a>
+      <a href="#group-atoms">Atoms</a>
+      <a href="#group-molecules">Molecules</a>
+      <a href="#group-organisms">Organisms</a>
+      <a href="#group-patterns">Patterns</a>
+      <a href="specs/scripts/index.html">Scripts</a>
+    </nav>
+  </header>
+  <p class="intro">Components are grouped by folder. Each entry has a description, then its variants and states.</p>
+  <nav id="jump" class="jump jump-folders" aria-label="On this page"></nav>
+  <main id="catalog"></main>
+  <script src="specs/catalog.js"></script>
+  <script>
+    var catalog = document.getElementById("catalog");
+    var jump = document.getElementById("jump");
+
+    function lead(markdown) {
+      var lines = markdown.replace(/\r/g, "").split("\n");
+      var i = 0;
+      while (i < lines.length && lines[i].trim() === "") i += 1;
+      if (lines[i] && lines[i].trim().charAt(0) === "#") i += 1;
+      while (i < lines.length && lines[i].trim() === "") i += 1;
+      var para = [];
+      while (i < lines.length && lines[i].trim() !== "") {
+        para.push(lines[i].trim());
+        i += 1;
+      }
+      return para.join(" ");
+    }
+
+    jump.replaceChildren();
+    catalog.querySelectorAll(".group").forEach(function (group) {
+      var folder = group.id.replace(/^group-/, "");
+      var title = group.querySelector("h2");
+      var block = document.createElement("div");
+      var label = document.createElement("p");
+      label.className = "jump-label";
+      label.textContent = title ? title.textContent : "";
+      var links = document.createElement("div");
+      links.className = "jump-links";
+      group.querySelectorAll(".specimen").forEach(function (section) {
+        var heading = section.querySelector("h3");
+        var link = document.createElement("a");
+        link.href = "#" + section.id;
+        link.textContent = heading ? heading.textContent : section.id;
+        links.appendChild(link);
+        fetch("specs/" + folder + "/" + section.id + ".md").then(function (response) {
+          if (!response.ok) return "";
+          return response.text();
+        }).then(function (text) {
+          var summary = lead(text);
+          if (!summary || !heading || section.querySelector(".component-desc")) return;
+          var note = document.createElement("p");
+          note.className = "component-desc";
+          note.textContent = summary;
+          heading.insertAdjacentElement("afterend", note);
+        });
+      });
+      block.appendChild(label);
+      block.appendChild(links);
+      jump.appendChild(block);
+    });
+  </script>
+</body>
+</html>
