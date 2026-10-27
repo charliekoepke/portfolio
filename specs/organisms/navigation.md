@@ -10,7 +10,7 @@ The site name "Portfolio", then Work, About, and Notes. "Work" is the current pa
 
 ## Appearance
 
-The bar is 64px tall, white, with a 1px `#D0D9E6` bottom border. Horizontal padding matches the page margin for the breakpoint. The site name is 16px Inter 600, `#12263E`. Links are 16px. The current link is Inter 600 and has `aria-current="page"`. Other links are `#3D5168`. Gaps between links are 24px.
+The bar is 64px tall, white, with a 1px `#D0D9E6` bottom border. Horizontal padding matches the page margin for the breakpoint. The site name is 16px Montserrat 600, `#12263E`. Links are 16px. The current link is Montserrat 600 and has `aria-current="page"`. Other links are `#3D5168`. Gaps between links are 24px.
 
 ## Rules
 

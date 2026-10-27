@@ -16,8 +16,8 @@ Label: "Project summary". Placeholder: "What changed for the care team". The fie
 | Padding | 16px | `--space-16` |
 | Radius | 4px | `--radius-field` |
 | Border | 1px `#3D5168` | `--color-text-secondary` |
-| Text | 1rem Inter 400 | `--font-size-body` |
-| Label | 1rem Inter 600, 8px above | `--font-size-body` |
+| Text | 1rem Gafata 400 | `--font-size-body` |
+| Label | 1rem Montserrat 600, 8px above | `--font-size-body` |
 
 Hover and focus match the input. Focus adds the 2px navy ring. An error uses the danger border and a sentence underneath. Disabled uses the disabled fill and text.
 

@@ -15,7 +15,7 @@ A 24px spinner beside the word "Loading" while a case study list is requested.
 | Size | 16px or 24px | `--space-16`, `--space-24` |
 | Stroke | 2px `#17345A` | `--icon-stroke`, `--color-action-primary` |
 | Gap to the word | 8px | `--space-8` |
-| Word | 1rem Inter 400 | `--font-size-body` |
+| Word | 1rem Gafata 400 | `--font-size-body` |
 
 The graphic does not carry the message alone. The word "Loading" is visible next to it.
 

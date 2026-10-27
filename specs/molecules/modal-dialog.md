@@ -10,7 +10,7 @@ Title: "Delete this project?". Body: "Intake redesign will be removed from the s
 
 ## Appearance
 
-The dialog is a white surface, 4px radius, 24px padding, max width 480px. The title is the page-title size only when it is the page. Inside a dialog the title is 20px Inter 600. The blanket behind it is `#0C1B2E` at 40 percent opacity. Actions are right aligned. The secondary button comes first and the primary button is at the right, with 16px between them. A close icon button named "Close" sits at the top.
+The dialog is a white surface, 4px radius, 24px padding, max width 480px. The title is the page-title size only when it is the page. Inside a dialog the title is 20px Montserrat 600. The blanket behind it is `#0C1B2E` at 40 percent opacity. Actions are right aligned. The secondary button comes first and the primary button is at the right, with 16px between them. A close icon button named "Close" sits at the top.
 
 ## Rules
 

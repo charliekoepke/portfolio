@@ -18,7 +18,7 @@ Legend: "Case study length". Options: "Short", "Standard", "In depth". "Standard
 | Border | 1px `#3D5168` | `--color-text-secondary` |
 | Gap to label | 8px | `--space-8` |
 | Gap between options | 8px | `--space-8` |
-| Label | 1rem Inter 400 | `--font-size-body` |
+| Label | 1rem Gafata 400 | `--font-size-body` |
 
 Focus uses the 2px navy ring. Disabled uses the disabled fill, border, and label color.
 

@@ -1,6 +1,6 @@
 # Button
 
-Action control. Inter, on the navy palette, drawn as a pill. Two variants: primary and secondary.
+Action control. Montserrat, on the navy palette, drawn as a pill. Two variants: primary and secondary.
 
 ## Intent
 
@@ -17,7 +17,7 @@ Primary "Save". Secondary "Cancel".
 | Height | 2.5rem (40px) | `--space-40` |
 | Padding inline | 1.5rem (24px) | `--space-24` |
 | Radius | 50px | `--radius-button` |
-| Family | Inter | `--font-family-sans` |
+| Family | Montserrat | `--font-family-emphasis` |
 | Label size | 0.875rem (14px) | `--font-size-button` |
 | Label weight | 600 | `--font-weight-semibold` |
 | Focus | 2px `#17345A` ring, offset 2px | `--color-focus` |

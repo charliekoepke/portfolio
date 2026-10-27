@@ -10,7 +10,7 @@ Default structure follows [tabs](https://atlassian.design/components/tabs/usage)
 
 ## Appearance
 
-Each tab is 40px tall, with 16px of inline padding. The label is 14px Inter 600. The selected tab has a 2px `#17345A` underline. Unselected labels are `#3D5168`. The selected label is `#0C1B2E`. Focus uses the 2px navy ring. Panels sit 16px below the tab list.
+Each tab is 40px tall, with 16px of inline padding. The label is 14px Montserrat 600. The selected tab has a 2px `#17345A` underline. Unselected labels are `#3D5168`. The selected label is `#0C1B2E`. Focus uses the 2px navy ring. Panels sit 16px below the tab list.
 
 ## Rules
 

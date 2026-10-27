@@ -10,7 +10,7 @@ Title: "Role". Body: "Product design for clinical tools." An optional link "Read
 
 ## Appearance
 
-White surface, 1px `#D0D9E6` border, 4px radius, 24px padding. The title is 20px Inter 600. The body is 16px, 8px below the title. Sections inside the panel are 16px apart.
+White surface, 1px `#D0D9E6` border, 4px radius, 24px padding. The title is 20px Montserrat 600. The body is 16px, 8px below the title. Sections inside the panel are 16px apart.
 
 ## Rules
 

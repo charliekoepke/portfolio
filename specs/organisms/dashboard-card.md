@@ -10,7 +10,7 @@ Label "Projects". Value "6". Lozenge "In progress".
 
 ## Appearance
 
-White surface, 1px `#D0D9E6` border, 4px radius, 24px padding. Cards in a row have 24px between them. The label is 14px `#3D5168`. The value is 32px Inter 600, `#0C1B2E`, 8px below the label. The lozenge is 16px below the value.
+White surface, 1px `#D0D9E6` border, 4px radius, 24px padding. Cards in a row have 24px between them. The label is 14px `#3D5168`. The value is 32px Montserrat 600, `#0C1B2E`, 8px below the label. The lozenge is 16px below the value.
 
 ## Rules
 

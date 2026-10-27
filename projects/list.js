@@ -22,18 +22,25 @@
 
   function card(project) {
     var topics = topicsOf(project);
-    var tags = topics.map(function (topic) {
-      return '<span class="tag">' + escapeHtml(topic) + "</span>";
-    }).join("");
+    var tags = !limit && topics.length
+      ? '<div class="project-card-tags">' + topics.map(function (topic) {
+        return '<span class="tag">' + escapeHtml(topic) + "</span>";
+      }).join("") + "</div>"
+      : "";
     var media = project.image
       ? '<img class="project-card-media" src="' + encodeURI(base + project.slug + "/" + project.image) + '" alt="">'
-      : '<div class="project-card-media" aria-hidden="true"></div>';
-    return '<a class="project-card" href="' + encodeURI(base + project.slug + "/index.html") + '">' +
+      : '<div class="project-card-media" aria-hidden="true"><span>Image</span></div>';
+    var heading = limit ? "h3" : "h2";
+    var title = escapeHtml(project.title);
+    var href = encodeURI(base + project.slug + "/index.html");
+    return '<article class="project-card">' +
       media +
-      "<h2>" + escapeHtml(project.title) + "</h2>" +
+      '<div class="project-card-body">' +
+      "<" + heading + ">" + title + "</" + heading + ">" +
       "<p>" + escapeHtml(project.summary) + "</p>" +
-      (tags ? '<div class="project-card-tags">' + tags + "</div>" : "") +
-      "</a>";
+      tags +
+      '<a class="btn btn-primary" href="' + href + '">See More<span class="visually-hidden"> about ' + title + "</span></a>" +
+      "</div></article>";
   }
 
   function empty(title, text, action) {

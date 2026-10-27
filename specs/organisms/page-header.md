@@ -10,7 +10,7 @@ Breadcrumbs: Work / Clinical. Title: "Intake redesign". Description: "How a care
 
 ## Appearance
 
-One page header per page. The title is 32px Inter 600 (`--font-size-page-title`). The description is 16px, 8px below the title, max width 62 characters. Actions sit at the end of the title row on wide screens and wrap below the title on the narrow breakpoint, with 16px between buttons. Breadcrumbs sit 8px above the title. The header's bottom margin is 32px.
+One page header per page. The title is 32px Montserrat 600 (`--font-size-page-title`). The description is 16px, 8px below the title, max width 62 characters. Actions sit at the end of the title row on wide screens and wrap below the title on the narrow breakpoint, with 16px between buttons. Breadcrumbs sit 8px above the title. The header's bottom margin is 32px.
 
 ## Rules
 

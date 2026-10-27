@@ -10,7 +10,7 @@ Caption: "Projects". Columns: Project, Year, Status. Three rows. Status is a loz
 
 ## Appearance
 
-The table is full width of its region. Header cells are 14px Inter 600, `#3D5168`, with 16px padding. Body cells are 16px, `#0C1B2E`, with 16px padding. Row height is at least 48px. A 1px `#D0D9E6` rule separates rows. The header has a 1px bottom border in `#3D5168` so it is distinct from the body.
+The table is full width of its region. Header cells are 14px Montserrat 600, `#3D5168`, with 16px padding. Body cells are 16px, `#0C1B2E`, with 16px padding. Row height is at least 48px. A 1px `#D0D9E6` rule separates rows. The header has a 1px bottom border in `#3D5168` so it is distinct from the body.
 
 ## Rules
 

@@ -19,9 +19,9 @@ Label "Email address (required)". Placeholder "name@domain.com". Help text "Used
 | Radius | 4px | `--radius-field` |
 | Fill | `#FFFFFF` | `--color-surface-default` |
 | Border | 1px `#3D5168` | `--color-text-secondary` |
-| Text | 1rem Inter 400 | `--font-size-body` |
+| Text | 1rem Gafata 400 | `--font-size-body` |
 | Text color | `#0C1B2E` | `--color-text-primary` |
-| Label | 1rem Inter 600, 8px above the field | `--font-size-body` |
+| Label | 1rem Montserrat 600, 8px above the field | `--font-size-body` |
 | Help | 0.75rem, `#566A80`, 8px below the field | `--font-size-badge`, `--color-text-muted` |
 | Placeholder | `#566A80` | `--color-text-muted` |
 

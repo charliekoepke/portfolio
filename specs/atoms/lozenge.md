@@ -10,7 +10,7 @@ Default structure follows [lozenge](https://atlassian.design/components/lozenge/
 
 ## Appearance
 
-Height is 24px. Inline padding is 8px. Radius is 4px (`--radius-field`). Label is 12px Inter 600, sentence case. An optional icon is a 16px navy stroke, 8px before the label.
+Height is 24px. Inline padding is 8px. Radius is 4px (`--radius-field`). Label is 12px Montserrat 600, sentence case. An optional icon is a 16px navy stroke, 8px before the label.
 
 | Appearance | Fill | Label |
 | --- | --- | --- |
