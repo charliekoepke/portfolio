@@ -25,7 +25,7 @@ When it matters, a section can also mention collaboration with engineering, how 
 
 ## Default example
 
-The title is "Website Modernization" on a light grey header. A small italic note above the sections says the work is government work, so client and product names stay off the page. Each of the six sections has paragraphs and an image example with a caption.
+The title is "Website Modernization" on a light grey header. That study asks for a password before the page. A small italic note above the sections says the work is government work, so client and product names stay off the page. Each of the six sections has paragraphs and an image example with a caption.
 
 ## Appearance
 
@@ -47,3 +47,4 @@ Images and other files for a study live in that study’s folder.
 - Use the same six sections, in this order, on every case study.
 - Write each section heading in camel case, the same rule as every heading on the site.
 - Put the government-work disclosure above the first section, in small italic type.
+- A government case study can ask for a password before the study. The screen is a password field and Continue. A wrong password is a field error. A correct password opens the study for the browser session. The password lives in that study’s script. This is a simple screen, not a security control.

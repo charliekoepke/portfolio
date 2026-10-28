@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gafata&family=Montserrat:wght@600;700&display=swap">
   <link rel="stylesheet" href="../../specs/tokens.css">
   <link rel="stylesheet" href="../../site.css">
+  <script>
+    document.documentElement.dataset.studyLock = "locked";
+    try {
+      if (sessionStorage.getItem("study-website-modernization") === "open") {
+        document.documentElement.dataset.studyLock = "open";
+      }
+    } catch (err) {}
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -28,6 +36,20 @@
     </div>
   </header>
   <main id="main">
+    <div class="canvas" id="study-gate">
+      <form class="study-gate" id="study-gate-form">
+        <h1>Enter Password</h1>
+        <div class="field-block">
+          <label class="field-label" for="study-password">Password</label>
+          <input class="field" id="study-password" type="password" name="password" autocomplete="current-password" required>
+          <p class="error-text" id="study-password-error" hidden>That password is incorrect. Try again.</p>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Continue</button>
+        </div>
+      </form>
+    </div>
+    <div id="study-body">
     <header class="study-hero">
       <div class="study-hero-inner">
         <nav class="crumbs" aria-label="Breadcrumbs">
@@ -35,7 +57,7 @@
           <span class="sep" aria-hidden="true">/</span>
           <span aria-current="page">Website Modernization</span>
         </nav>
-        <h1>Website Modernization</h1>
+        <h1 tabindex="-1">Website Modernization</h1>
       </div>
     </header>
     <div class="canvas">
@@ -91,6 +113,7 @@
         </figure>
       </section>
     </div>
+    </div>
   </main>
   <footer class="site-footer">
     <div class="bar footer-bar">
@@ -114,5 +137,6 @@
     </div>
   </footer>
   <script src="../../site.js"></script>
+  <script src="gate.js"></script>
 </body>
 </html>

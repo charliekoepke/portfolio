@@ -64,6 +64,8 @@ Each case study has its own folder under `projects/`, named for that study. Webs
 
 Every case study uses the same layout. A light grey header carries the title. A small italic note above the sections says the work is government work, so client and product names stay off the page. The body is six sections, in order: The Problem, The How of Solving It, Brainstorming, Prototyping, Testing and Iterating, and Lessons Learned. Section headings follow the camel case rule. Paragraphs span the page column. Each section is paragraphs and image examples. The pattern is `specs/patterns/case-study.md`.
 
+Website Modernization is government work, so the page asks for a password before the study. The screen is a password field and Continue. A wrong password says “That password is incorrect. Try again.” A correct password opens the study for the rest of the browser session. The password is the `PASSWORD` value in `projects/website-modernization/gate.js`. It is a simple screen, not a security control. The projects card stays visible.
+
 About uses the same navy shades as circles behind the heading “About Me”, then a biography, three image placeholders, and the contact section “Let's Connect”. Home uses the shades as a grid of blocks behind the name.
 
 The header is on every page: a sticky white bar on wide screens, and a menu button with a side drawer below 48rem. Links are Home, Projects, and About, in that order, with `aria-current="page"` on the current page. Escape and the blanket close the drawer.

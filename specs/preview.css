@@ -1605,6 +1605,25 @@ div.project-card-media {
   margin-top: auto;
 }
 
+.study-gate {
+  width: min(100%, 24rem);
+}
+
+.study-gate h1 {
+  margin: 0;
+  font-size: var(--font-size-page-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-page-title);
+}
+
+.study-gate .field-block {
+  margin-top: var(--space-24);
+}
+
+.study-gate .form-actions {
+  margin-top: var(--space-32);
+}
+
 .study-hero {
   background: var(--color-surface-sunken);
   color: var(--color-text-primary);
