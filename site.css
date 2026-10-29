@@ -256,7 +256,8 @@ html.js .primary-nav.is-open {
   margin-top: var(--space-32);
 }
 
-.study-section {
+.study-section + .study-section,
+.study-disclosure + .study-section {
   margin-top: var(--space-64);
 }
 

@@ -25,13 +25,13 @@ When it matters, a section can also mention collaboration with engineering, how 
 
 ## Default example
 
-The title is "Website Modernization" on a light grey header. That study asks for a password before the page. A small italic note above the sections says the work is government work, so client and product names stay off the page. The Problem and Lessons Learned are paragraphs. The How of Solving It, Brainstorming, Prototyping, and Testing and Iterating each have paragraphs and an image example with a caption.
+The title is "Website Modernization" on a light grey header. That study is government work, so it asks for a password before the page, and a small italic note above the sections says client and product names stay off the page. A study that is not government work omits the note. The Problem and Lessons Learned are paragraphs. The How of Solving It, Brainstorming, Prototyping, and Testing and Iterating each have paragraphs and an image example with a caption.
 
 ## Appearance
 
 The header is the plain hero in `organisms/hero.md`: a full-width band on the sunken surface `#E6EDF5`, with no pattern. The title is Montserrat 600 in `#12263E`, aligned with the page column. Breadcrumbs sit above the title.
 
-The body is the full width of the page column. Sections are 64px apart. A section heading is 20px Montserrat 600, in camel case. Paragraphs are 16px and span that same column, 16px apart. The disclosure above the sections is 14px italic in `#3D5168`. An image example in the four middle sections spans the content column at a 16:9 ratio, with 24px above it. The caption is 14px `#3D5168`, 8px under the image. The Problem and Lessons Learned have no image in the basic template.
+The body is the full width of the page column. Sections are 64px apart. A section heading is 20px Montserrat 600, in camel case. Paragraphs are 16px and span that same column, 16px apart. On a government case study, the disclosure above the sections is 14px italic in `#3D5168`. An image example in the four middle sections spans the content column at a 16:9 ratio, with 24px above it. The caption is 14px `#3D5168`, 8px under the image. The Problem and Lessons Learned have no image in the basic template.
 
 Images and other files for a study live in that study’s folder.
 
@@ -47,5 +47,5 @@ Images and other files for a study live in that study’s folder.
 - Use the same six sections, in this order, on every case study.
 - The basic template has no image in The Problem or Lessons Learned. Add an image to either section only when that specific case study needs one.
 - Write each section heading in camel case, the same rule as every heading on the site.
-- Put the government-work disclosure above the first section, in small italic type.
+- On a government case study, put the disclosure above the first section, in small italic type. Omit it on every other case study.
 - A government case study can ask for a password before the study. The screen is a password field and Continue. A wrong password is a field error. A correct password opens the study for the browser session. The password lives in that study’s script. This is a simple screen, not a security control.

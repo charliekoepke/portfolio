@@ -19,8 +19,8 @@ window.PROJECTS = [
     summary: "Updating an antiquated webapp."
   },
   {
-    slug: "figma-design-system",
-    title: "Figma Design System",
-    summary: "A short description of the project."
+    slug: "responsive-design-system",
+    title: "Responsive Design System",
+    summary: "An LLM-ready responsive design system"
   }
 ];
