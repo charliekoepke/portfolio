@@ -19,8 +19,8 @@ window.PROJECTS = [
     summary: "Updating an antiquated webapp."
   },
   {
-    slug: "working-with-wix",
-    title: "Working with Wix",
+    slug: "figma-design-system",
+    title: "Figma Design System",
     summary: "A short description of the project."
   }
 ];
