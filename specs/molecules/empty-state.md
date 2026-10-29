@@ -6,7 +6,7 @@ Default structure follows [empty state](https://atlassian.design/components/empt
 
 ## Default example
 
-Heading: "No projects yet." Description: "Add a case study to show it here." Primary button: "Add a project".
+Heading: "No Projects Yet". Description: "Add a case study to show it here." Primary button: "Add a project".
 
 ## Appearance
 
@@ -16,5 +16,4 @@ The block is centered in the content area, with 32px of padding. The heading is 
 
 - Say what is missing and what to do next. Do not use "Nothing here yet" alone.
 - One primary button. A second action, if needed, is a link under the button.
-- A filtered list with no matches uses the same pattern and a button "Clear filters".
 - Do not show an empty state while the list is still loading. Show the spinner.

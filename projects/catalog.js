@@ -2,12 +2,35 @@
 // Images and other files for that project live in the same folder.
 // Add an entry here to show its card. Each card is a square image,
 // the project name, a short description, and a See More link.
+// The projects list places the image on the left. The home preview
+// places that same image above the text.
 //
 // {
 //   slug: "project-name",
 //   title: "Project title",
 //   summary: "One sentence.",
-//   topics: ["Personal"],
 //   image: "cover.jpg"
 // }
-window.PROJECTS = [];
+// Images and other files live in the case study folder, next to index.html.
+window.PROJECTS = [
+  {
+    slug: "website-modernization",
+    title: "Website Modernization",
+    summary: "Updating an antiquated webapp."
+  },
+  {
+    slug: "responsive-design-system",
+    title: "Responsive Design System",
+    summary: "An LLM-ready responsive design system"
+  },
+  {
+    slug: "working-with-wix",
+    title: "Working with Wix",
+    summary: "A short description of the project."
+  },
+  {
+    slug: "figma-design-system",
+    title: "Figma Design System",
+    summary: "A short description of the project."
+  }
+];

@@ -17,4 +17,4 @@ The list is 320px. The detail takes the remaining width. The gutter is 24px. The
 - Selection is not color alone. The selected title is semibold and the state is in the accessibility tree.
 - Arrow keys move the selection when the list has focus. The detail updates to match.
 - The detail has one heading for the selected item.
-- An empty selection uses the empty state in the detail column: "Select a project."
+- An empty selection uses the empty state in the detail column: "Select a Project".
