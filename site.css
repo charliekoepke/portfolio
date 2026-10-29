@@ -243,12 +243,17 @@ html.js .primary-nav.is-open {
   margin-bottom: var(--space-16);
 }
 
-.study-disclosure {
+.study-disclosure,
+.study-status {
   margin: 0;
   color: var(--color-text-secondary);
   font-size: var(--font-size-button);
   font-style: italic;
   line-height: var(--line-height-body);
+}
+
+.study-status {
+  margin-top: var(--space-32);
 }
 
 .study-section + .study-section,
@@ -691,6 +696,40 @@ textarea.field {
 
 .field:hover {
   border-color: var(--color-action-primary);
+}
+
+.field.is-error {
+  border-color: var(--color-danger);
+}
+
+.error-text {
+  margin: 0;
+  font-size: var(--font-size-badge);
+  color: var(--color-danger);
+}
+
+html[data-study-lock="locked"] #study-body,
+html[data-study-lock="open"] #study-gate {
+  display: none;
+}
+
+.study-gate {
+  width: min(100%, 24rem);
+}
+
+.study-gate h1 {
+  margin: 0;
+  font-size: var(--font-size-page-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-page-title);
+}
+
+.study-gate .field-block {
+  margin-top: var(--space-24);
+}
+
+.study-gate .form-actions {
+  margin-top: var(--space-32);
 }
 
 .form-actions {
