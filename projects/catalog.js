@@ -17,5 +17,10 @@ window.PROJECTS = [
     slug: "website-modernization",
     title: "Website Modernization",
     summary: "Updating an antiquated webapp."
+  },
+  {
+    slug: "working-with-wix",
+    title: "Working with Wix",
+    summary: "A short description of the project."
   }
 ];
