@@ -54,13 +54,13 @@ An alert and a flag stay separate. An alert sits in the page flow. A flag floats
 
 ## UX behaviour
 
-Home opens with a full-width navy billboard, then a short about section and a project preview. The hero headline is the name. The role line is “UX Designer and Researcher”. “Let's Connect” goes to `about/index.html#contact-heading`. “See What I’m Working On” previews up to three projects. With no catalog entries, that row stays `aria-hidden`.
+Home opens with a full-width navy billboard, then a short about section and a project preview. The hero headline is the name. The role line is “UX Designer and Researcher”. “Let's Connect” goes to `about/index.html#contact-heading`. “See What I’m Working On” shows Responsive Design System, Website Modernization, and Figma Design System. With no catalog entries, that row stays `aria-hidden`.
 
 The hero is the band under the navigation. Home, About, and Projects use navy shade patterns: blocks, circles, and lines. A case study uses the plain sunken band. The organism is `specs/organisms/hero.md`.
 
 Projects opens with the same navy shade billboard. Its pattern is lines crossing at different angles, and the heading is “Projects”. Cards then render from `window.PROJECTS` in `projects/catalog.js`. Each project card is horizontal: a square image on the left, then the name, a short description, and “See More”. The home preview uses those same parts with the image above the text. The projects page has no filters.
 
-Each case study has its own folder under `projects/`, named for that study. Website Modernization is `projects/website-modernization/`. Responsive Design System is `projects/responsive-design-system/`. The page is `index.html` in that folder. Images and other files used in the study live in the same folder. Client and website names stay off the page. Use general wording.
+Each case study has its own folder under `projects/`, named for that study. Website Modernization is `projects/website-modernization/`. Responsive Design System is `projects/responsive-design-system/`. Working with Wix is `projects/working-with-wix/`. Figma Design System is `projects/figma-design-system/`. The page is `index.html` in that folder. Images and other files used in the study live in the same folder. Client and website names stay off the page. Use general wording.
 
 Every case study uses the same layout. A light grey header carries the title. A government case study adds a small italic note above the sections: the work is government work, so client and product names stay off the page. Other case studies omit that note. The body is six sections, in order: The Problem, The How of Solving It, Brainstorming, Prototyping, Testing and Iterating, and Lessons Learned. Section headings follow the camel case rule. Paragraphs span the page column. The Problem and Lessons Learned are paragraphs. The other four sections add an image example with a caption. An image in The Problem or Lessons Learned is added only for the case study that needs it. The pattern is `specs/patterns/case-study.md`.
 

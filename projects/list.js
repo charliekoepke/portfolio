@@ -19,7 +19,7 @@
     var media = project.image
       ? '<img class="project-card-media" src="' + encodeURI(base + project.slug + "/" + project.image) + '" alt="">'
       : '<div class="project-card-media" aria-hidden="true"><span>Image</span></div>';
-    var heading = limit ? "h3" : "h2";
+    var heading = list.id === "project-preview" || limit ? "h3" : "h2";
     var title = escapeHtml(project.title);
     var href = encodeURI(base + project.slug + "/index.html");
     return '<li class="project-card">' +
@@ -32,7 +32,18 @@
       "</li>";
   }
 
-  var shown = limit ? projects.slice(0, limit) : projects;
+  var slugList = (list.getAttribute("data-slugs") || "")
+    .split(",")
+    .map(function (slug) { return slug.trim(); })
+    .filter(Boolean);
+  var shown = slugList.length
+    ? slugList.map(function (slug) {
+        for (var i = 0; i < projects.length; i++) {
+          if (projects[i].slug === slug) return projects[i];
+        }
+        return null;
+      }).filter(Boolean)
+    : (limit ? projects.slice(0, limit) : projects);
   list.classList.remove("is-empty");
   list.removeAttribute("aria-hidden");
   if (emptyBox) emptyBox.hidden = true;

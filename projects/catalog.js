@@ -22,5 +22,15 @@ window.PROJECTS = [
     slug: "responsive-design-system",
     title: "Responsive Design System",
     summary: "An LLM-ready responsive design system"
+  },
+  {
+    slug: "working-with-wix",
+    title: "Working with Wix",
+    summary: "A short description of the project."
+  },
+  {
+    slug: "figma-design-system",
+    title: "Figma Design System",
+    summary: "A short description of the project."
   }
 ];
