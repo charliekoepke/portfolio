@@ -291,14 +291,22 @@ html.js .primary-nav.is-open {
   display: block;
   width: 100%;
   height: auto;
+  margin-inline: auto;
   border-radius: var(--radius-field);
+}
+
+.study-figure.is-narrow img {
+  width: auto;
+  max-width: 100%;
 }
 
 .study-figure figcaption {
   margin-top: var(--space-8);
+  margin-inline: auto;
   max-width: 62ch;
   color: var(--color-text-secondary);
   font-size: var(--font-size-button);
+  text-align: center;
 }
 
 .billboard {

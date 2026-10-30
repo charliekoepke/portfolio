@@ -25,7 +25,7 @@ Use cards for a collection of related content, such as project summaries.
 
 Heading "Card". Body "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae." Action "Visit Florida Keys".
 
-The project card on this site uses a square image, the project name, a short description, and "See More". On the projects page the image sits on the left. On the home preview the same image sits above the text.
+The project card on this site uses a square image, the project name, a short description, and "See More". On the projects page the image sits on the left. On the home preview the same image sits above the text. When the project folder contains a file named preview-image, that file is the card image. The catalog lists the filename with its extension. A project without that file shows the empty image placeholder.
 
 ## Appearance
 
@@ -40,6 +40,7 @@ The stacked card places the square image across the top. The home preview shows 
 - Each card links to its detail. The visible label is "See More", and the accessible name includes the project name.
 - Use a card for a summary, not as decoration for any bordered box.
 - Give each card its own image and its own summary. A repeated image makes the cards harder to tell apart.
+- Use the preview-image file in the project folder as the card image, and list that filename in the catalog. Leave the image unset when that file is not there.
 - Use an image that stays clear when the card is stacked and when it is horizontal.
 - Keep the styling plain: a white surface, a line border, and a small radius. Skip folds, bent corners, and paper texture.
 - The collection is a `ul`. Each card is an `li`.

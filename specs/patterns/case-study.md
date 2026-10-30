@@ -31,7 +31,7 @@ The title is "Website Modernization" on a light grey header. That study is gover
 
 The header is the plain hero in `organisms/hero.md`: a full-width band on the sunken surface `#E6EDF5`, with no pattern. The title is Montserrat 600 in `#12263E`, aligned with the page column. Breadcrumbs sit above the title.
 
-The body is the full width of the page column. Sections are 64px apart. A section heading is 20px Montserrat 600, in camel case. Paragraphs are 16px and span that same column, 16px apart. When a study needs a disclosure, the note above the sections is 14px italic in `#3D5168`. An image example in the four middle sections spans the content column at a 16:9 ratio, with 24px above it. The caption is 14px `#3D5168`, 8px under the image. The Problem and Lessons Learned have no image in the basic template.
+The body is the full width of the page column. Sections are 64px apart. A section heading is 20px Montserrat 600, in camel case. Paragraphs are 16px and span that same column, 16px apart. When a study needs a disclosure, the note above the sections is 14px italic in `#3D5168`. An image example in the four middle sections is centered in the content column, with 24px above it. A placeholder is a 16:9 ratio. A photo stays at its original width when spanning the column would make it too large. The caption is 14px `#3D5168`, 8px under the image, and centered. The Problem and Lessons Learned have no image in the basic template.
 
 Images and other files for a study live in that study’s folder.
 
