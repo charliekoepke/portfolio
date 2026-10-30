@@ -216,14 +216,24 @@ figcaption {
 }
 
 .btn-primary:hover,
-.btn-primary.is-hover,
+.btn-primary.is-hover {
+  background: var(--color-surface-default);
+  color: var(--color-action-primary);
+  border-color: var(--color-action-primary);
+}
+
 .icon-btn-primary:hover,
 .icon-btn-primary.is-hover {
   background: var(--color-action-primary-hover);
 }
 
 .btn-primary:active,
-.btn-primary.is-pressed,
+.btn-primary.is-pressed {
+  background: var(--color-surface-sunken);
+  color: var(--color-action-primary);
+  border-color: var(--color-action-primary);
+}
+
 .icon-btn-primary:active,
 .icon-btn-primary.is-pressed {
   background: var(--color-action-primary-pressed);
@@ -238,7 +248,12 @@ figcaption {
 }
 
 .btn-secondary:hover,
-.btn-secondary.is-hover,
+.btn-secondary.is-hover {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-action-primary);
+}
+
 .icon-btn-secondary:hover,
 .icon-btn-secondary.is-hover,
 .page-btn:hover,
@@ -249,7 +264,9 @@ figcaption {
 
 .btn-secondary:active,
 .btn-secondary.is-pressed {
-  background: var(--color-border-default);
+  background: var(--color-action-primary-pressed);
+  color: var(--color-text-inverse);
+  border-color: var(--color-action-primary-pressed);
 }
 
 .btn:disabled,
