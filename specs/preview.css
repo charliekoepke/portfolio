@@ -63,7 +63,6 @@ body {
 }
 
 .intro {
-  max-width: 62ch;
   margin: var(--space-32) var(--space-32) 0;
 }
 
@@ -104,7 +103,6 @@ body {
 }
 
 .component-desc {
-  max-width: 62ch;
   margin: 0 0 var(--space-16);
   color: var(--color-text-secondary);
 }
@@ -1281,7 +1279,6 @@ textarea.field {
 }
 
 .page-header .desc {
-  max-width: 62ch;
   margin: var(--space-8) 0 0;
 }
 

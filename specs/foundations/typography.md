@@ -4,6 +4,8 @@ Gafata is the regular face. It carries body text. Montserrat is the semibold and
 
 Headings use camel case. Capitalize each word. Small words such as of, and, and a stay lowercase unless they start the heading. A person’s name stays as that person writes it.
 
+Paragraphs span the full width of their container. A caption is not a paragraph. Captions stay centered and can be shorter than that column.
+
 The conformance target is WCAG 2.0 Level AA. Sizes are rem so text can scale to 200% without loss of content. Body line height is 1.5.
 
 ## Family

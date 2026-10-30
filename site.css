@@ -179,7 +179,6 @@ html.js .primary-nav.is-open {
 
 .page-header p {
   margin: var(--space-8) 0 0;
-  max-width: 62ch;
   color: var(--color-text-secondary);
 }
 
@@ -365,7 +364,6 @@ html.js .primary-nav.is-open {
 .hero p,
 .home-section p {
   margin: var(--space-16) 0 0;
-  max-width: 62ch;
 }
 
 .hero h2 {
@@ -505,7 +503,6 @@ html.js .primary-nav.is-open {
 
 .about-story p {
   margin: 0;
-  max-width: 62ch;
 }
 
 .about-photos {
@@ -523,6 +520,22 @@ html.js .primary-nav.is-open {
 
 .about-contact {
   margin-top: var(--space-64);
+  padding: var(--space-32);
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-field);
+  text-align: center;
+}
+
+.about-contact .form {
+  margin-inline: auto;
+}
+
+.about-contact .form-actions {
+  justify-content: center;
+}
+
+.about-contact .alert {
+  margin-inline: auto;
 }
 
 .form {
@@ -806,7 +819,6 @@ html[data-study-lock="open"] #study-gate {
 }
 
 .home-intro .home-intro-lead {
-  max-width: 24em;
   color: var(--color-text-primary);
   font-size: var(--font-size-page-title);
   font-weight: var(--font-weight-regular);
