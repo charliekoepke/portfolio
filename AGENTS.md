@@ -54,7 +54,7 @@ An alert and a flag stay separate. An alert sits in the page flow. A flag floats
 
 ## UX behaviour
 
-Home opens with a full-width navy billboard, then a short about section and a project preview. The hero headline is the name. The role line is “UX Designer and Researcher”. “Let's Connect” goes to `about/index.html#contact-heading`. “See What I’m Working On” shows Responsive Design System, Website Modernization, and Figma Design System. With no catalog entries, that row stays `aria-hidden`.
+Home opens with a full-width navy billboard, then a short about section and a project preview. The hero headline is the name. The role line is “UX Designer and Researcher”. “Let's Connect” goes to `about/index.html#contact-heading`. “See What I’m Working On” shows Responsive Design System, Website Modernization, and Figma Design System. “View projects” is centered under those cards. With no catalog entries, that row stays `aria-hidden`.
 
 The hero is the band under the navigation. Home, About, and Projects use navy shade patterns: blocks, circles, and lines. A case study uses the plain sunken band. The organism is `specs/organisms/hero.md`.
 

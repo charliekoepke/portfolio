@@ -1,6 +1,6 @@
 # Button
 
-Action control. Montserrat, on the navy palette, drawn as a pill. Two variants: primary and secondary.
+Action control. Montserrat, on the navy palette, drawn as a pill. Primary is a navy fill, and on hover it turns white with a navy border and navy text. Secondary is white with a navy border and navy text, and it fills navy on hover.
 
 ## Intent
 
@@ -34,10 +34,14 @@ The main action in a region. One primary button per region.
 | --- | --- | --- |
 | Fill | `#17345A` | `--color-action-primary` |
 | Label | `#F7FAFC` | `--color-text-inverse` |
-| Hover fill | `#102544` | `--color-action-primary-hover` |
-| Pressed fill | `#0C1C34` | `--color-action-primary-pressed` |
+| Hover fill | `#FFFFFF` | `--color-surface-default` |
+| Hover border | 1px solid `#17345A` | `--color-action-primary` |
+| Hover label | `#17345A` | `--color-action-primary` |
+| Pressed fill | `#E6EDF5` | `--color-surface-sunken` |
+| Pressed border | 1px solid `#17345A` | `--color-action-primary` |
+| Pressed label | `#17345A` | `--color-action-primary` |
 
-Label contrast on the action fill is 11.96:1.
+Label contrast on the resting action fill is 11.96:1. On hover, navy text on white is 12.54:1. On pressed, navy text on the sunken surface is 10.62:1. The white fill against the page `#F4F7FB` is only 1.07:1, so the navy border is the boundary: 11.67:1 against the page and 12.54:1 against a white card. Both clear the 3:1 requirement for a control edge.
 
 ## Secondary
 
@@ -48,15 +52,21 @@ The quieter action beside a primary. White fill, navy border, navy label.
 | Fill | `#FFFFFF` | `--color-surface-default` |
 | Border | 1px solid `#17345A` | `--color-action-primary` |
 | Label | `#17345A` | `--color-action-primary` |
-| Hover fill | `#E6EDF5` | `--color-surface-sunken` |
-| Pressed fill | `#D0D9E6` | `--color-border-default` |
+| Hover fill | `#17345A` | `--color-action-primary` |
+| Hover label | `#F7FAFC` | `--color-text-inverse` |
+| Pressed fill | `#0C1C34` | `--color-action-primary-pressed` |
+| Pressed label | `#F7FAFC` | `--color-text-inverse` |
 
-Label contrast is 12.54:1 on white, 10.62:1 on hover, and 8.80:1 on pressed. The border and the label use the same navy, so the control reads as an outline even without the fill change.
+Label contrast is 12.54:1 on white. On hover, the inverse label on the action fill is 11.96:1, the same pair as primary. Pressed keeps that inverse label on the darker action fill.
+
+At rest, the border and the label use the same navy, so the control reads as an outline. Hover fills the button with that navy.
 
 ## States
 
-- Hover changes the fill only. The label color stays.
-- Pressed darkens the fill one step further.
+- Primary hover switches to a white fill, a navy border, and a navy label.
+- Secondary hover fills the button with the action navy and switches the label to inverse text.
+- Primary pressed uses the sunken surface and keeps the navy border and navy label.
+- Secondary pressed darkens the navy fill one step, and the label stays inverse.
 - Focus shows the 2px ring, offset 2px. The ring stays visible on the page and on white.
 - Disabled sets the `disabled` attribute, fill `#E4EBF3`, and label `#54687C`. The secondary border switches to `#D0D9E6`. Hover and pressed do not change a disabled button.
 
