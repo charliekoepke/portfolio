@@ -46,30 +46,26 @@
       <section class="study-section" aria-labelledby="study-how">
         <h2 id="study-how">The How of Solving It</h2>
         <p>Before proposing the idea to any of my teams, I wanted to make sure that I knew what I was talking about. I researched LLM-ready responsive design systems and read up on how to structure them, how they worked, and how to implement and use them in projects. I have some coding experience from college where I studied website development and design. I decided to create a template for the responsive design system, and then use that template to create my own website to see if it really was going to be useful.</p>
-        <figure class="study-figure">
-          <div class="study-media"><span>Image</span></div>
-          <figcaption>Structure of a responsive design system</figcaption>
-        </figure>
       </section>
       <section class="study-section" aria-labelledby="study-brainstorming">
         <h2 id="study-brainstorming">Brainstorming</h2>
         <p>Most of the articles I looked into showed a great structure for the design system, based on the atomic design system structure. I wanted to also make sure that the AI agents knew that the design system was the basis for all components and templates, so there was no ambiguity. I knew from previously working with AI agents when designing that if you don’t specify something, the agent will take it upon themselves to implement something you didn’t ask for and that’s not always useful. Since the responsive design system is built on different markdown files that have information about what a component should look like and rules for each component, I also decided to add some examples to the component file from examples from USWDS website. I also fed the agent the Atlassian Design system documentation, since they documented a lot of the components the design system was using.</p>
         <figure class="study-figure">
           <div class="study-media"><span>Image</span></div>
-          <figcaption>Example components from the components page</figcaption>
+          <figcaption>Structure of a responsive design system</figcaption>
         </figure>
       </section>
       <section class="study-section" aria-labelledby="study-prototyping">
         <h2 id="study-prototyping">Prototyping</h2>
-        <p>The key screens and flows, and the interaction and accessibility choices behind them.</p>
+        <p>I started by feeding the AI all the information from my research about responsive design structures. The most important information was the structure and the various use cases for each component. As I was editing the component files, I didn’t have any way to see what the changes were looking like, so I created a components.html page that would show all of the different components, their different states and variants, and give a short description of the component. The components.html page essentially acted as a catalog for the agent and me to reference back to when verifying the code was working.</p>
         <figure class="study-figure">
           <div class="study-media"><span>Image</span></div>
-          <figcaption>What this example shows.</figcaption>
+          <figcaption>Example components from the component page</figcaption>
         </figure>
       </section>
       <section class="study-section" aria-labelledby="study-testing">
         <h2 id="study-testing">Testing and Iterating</h2>
-        <p>What was tested, what failed, and what changed because of the evidence.</p>
+        <p>As with any AI agent, I had to iterate and make changes and tweaks as I was building. There were some components that needed more specific rules, or components that I had to create since they were being used a lot. I created a hero section pattern that could be reused, since a lot of my main pages had a hero section. I also updated the AGENTS.md file to update the components catalog and HTML page as new components were added, or as components were changed, to make sure everything was up-to-date and I didn’t have to manually go through and make sure everything was changed.</p>
         <figure class="study-figure">
           <div class="study-media"><span>Image</span></div>
           <figcaption>An empty case study template page</figcaption>
@@ -77,7 +73,7 @@
       </section>
       <section class="study-section" aria-labelledby="study-lessons">
         <h2 id="study-lessons">Lessons Learned</h2>
-        <p>What changed because of the work, and what is still unknown.</p>
+        <p>I had worked with AI when designing before, mostly for creating prototypes. I didn’t think about how the prototypes in Figma don’t always translate over the code until I was working with developers and noticed they didn’t really need or utilize the prototype. While I think AI is good for things that require a lot of structure and rules, design doesn’t always have that. Luckily, the design system needs a template to work off of, so using the AI for this use case benefitted me and the development team in the long run. The only thing that’s hard at first is implementing it and getting adding all the different themes and components. After that, though, building a page really only requires sending the agent a low fidelity wireframe and asking to build a page and then adding slight tweaks as needed. I applied this process to building my portfolio website and found that it was about three times faster than when I had built previous portfolio websites from the ground up with no design system or AI.</p>
       </section>
     </div>
   </main>
