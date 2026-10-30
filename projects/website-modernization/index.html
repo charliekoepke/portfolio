@@ -73,7 +73,7 @@
         <p>At the same time that we were modernizing the website, we also had to maintain and continue to update the legacy website. The development team was split into team members who helped with maintaining and updating the legacy site, and team members who worked on creating the new website. There were talks before about updating the legacy website bit by bit, but the codebase was too complicated and a very old coding language, so the decision was made to start from the ground up as a React app instead of trying to rework the codebase.</p>
         <p>The client had some ideas about specific pages they wanted, but for the most part, the IA (information architecture) of the website, the design system, and the user flows were up to us to create and then have them critique and give feedback.</p>
         <figure class="study-figure">
-          <div class="study-media"><span>Image</span></div>
+          <img src="architecture-design-analysis.png" alt="A layout of the website navigation structure">
           <figcaption>A layout of the website navigation structure</figcaption>
         </figure>
       </section>
@@ -81,10 +81,6 @@
         <h2 id="study-brainstorming">Brainstorming</h2>
         <p>The clients provided some other websites that had a more updated design that they liked as a template for the design. I kept a lot of the same color palette, which was navy and white, and then came up with a more uniform design system. A lot of the components on the legacy site were the same, but some things differed and looked a little off, as if they had been added last minute. I worked closely with a developer on the modernization team to get together a design system that we used as a universal truth when creating the new website to make the building process easier and also make sure everything was consistent globally across the website.</p>
         <p>In terms of the actual user flows of the website, I needed to figure out how people navigated through the website currently. I conducted a few user interviews with the clients, and then created an idea for a newer navigation. I then conducted a tree test to see if the navigation structure made sense to users. The tree test helped confirm a few things. Firstly, there were a few reports that weren’t needed anymore or could be combined into one report with different filters. There were also some pages that altogether weren’t needed anymore since the content could be found in other pages. Secondly, the navigation structure was the most important part of the website. There was such a diverse user base and each user had a different use case, the navigation had to be very specific and structured so a user could find the report and information they needed, otherwise there was no purpose to the website.</p>
-        <figure class="study-figure">
-          <div class="study-media"><span>Image</span></div>
-          <figcaption>Design system color palette</figcaption>
-        </figure>
       </section>
       <section class="study-section" aria-labelledby="study-prototyping">
         <h2 id="study-prototyping">Prototyping</h2>
@@ -92,15 +88,15 @@
         <p>Select provider -> select report type -> select filters -> click to run report -> see the report.</p>
         <p>On the legacy website, each step of the flow would redirect to a new page. I wanted the new user flow to combine some of these steps onto one page so the user wouldn’t be redirected to a new page for every new action. For the modernized website, when a user selects a provider, they are taken to a provider type page with a summary page showing important information graphics at a quick glance. They then have the option of selecting a report type from tabs in the provider page. Within each report type tab, they can select the exact report from a side menu within the report table, and the table will then dynamically update as filters are applied, so there’s no need to click a button to run the report. Additionally, the table layout for the legacy website also required a lot of clicking and page redirecting. The user had to click on different sections to drill down to the specific information they wanted to find, and then when that information was clicked, a new tab would open with that information displayed on a mostly blank page. I proposed the idea of making two different views, a data view, where users could see all the raw data, and then a drilldown view where they could drill down to more specific information that was sorted by different categories. I also asked the developers to make the tables have dropdown options, so that a user could easily click a table cell, see the quick information, and then have a more specific provider details page that had more detailed information as an option to see.</p>
         <figure class="study-figure">
-          <div class="study-media"><span>Image</span></div>
+          <img src="table-layout.png" alt="Updated table layout">
           <figcaption>Updated table layout</figcaption>
         </figure>
       </section>
       <section class="study-section" aria-labelledby="study-testing">
         <h2 id="study-testing">Testing and Iterating</h2>
         <p>As we’ve updated the website, we’ve had a separate QA webpage where our clients can go through and see how the modernized website will look and function. The most important thing about the modernized website is that the data is correct and linked to the correct database. Some critiques that came up was that the selecting of the reports wasn’t noticeable in the filter sidebar. I came up with some ideas that would have the user be required to select a report after clicking on the report type tab, or the table wouldn’t load. We ended up keeping the report selection in the sidebar, but there was a prompt in the main table section that users needed to select a report before the information in the table was displayed. There were also some edits made related to the filters and the way they were displayed. The legacy website used components that didn’t make sense for the type of filter it was being applied to. We updated the components to be multi-select checkboxes with a ‘Select All’ option at the top of the checkbox group, with ‘Select All’ as the default option. All other multi-selects that had a lot of options were made into multi-select dropdowns.</p>
-        <figure class="study-figure">
-          <div class="study-media"><span>Image</span></div>
+        <figure class="study-figure is-narrow">
+          <img src="filter-sidebar.png" alt="Filter sidebar">
           <figcaption>Filter sidebar</figcaption>
         </figure>
       </section>

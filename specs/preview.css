@@ -1688,9 +1688,11 @@ div.project-card-media {
 
 .study-figure figcaption {
   margin-top: var(--space-8);
+  margin-inline: auto;
   max-width: 62ch;
   color: var(--color-text-secondary);
   font-size: var(--font-size-button);
+  text-align: center;
 }
 
 .hero {
