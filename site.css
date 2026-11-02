@@ -505,6 +505,10 @@ html.js .primary-nav.is-open {
   margin: 0;
 }
 
+.about-story p + p {
+  margin-top: var(--space-16);
+}
+
 .about-photos {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
