@@ -20,6 +20,8 @@ Hierarchy comes from type and weight. Names, headings, navigation, buttons, labe
 
 Headings use camel case. Capitalize each word. Small words such as of, and, and a stay lowercase unless they start the heading. The Problem, The How of Solving It, and See What I’m Working On follow this. A person’s name stays as that person writes it.
 
+Paragraphs span the full width of their container. A caption is not a paragraph. Captions stay centered and can be shorter than that column.
+
 Principles:
 
 - One primary action in a region, labeled with a verb.
@@ -66,7 +68,7 @@ Every case study uses the same layout. A light grey header carries the title. A 
 
 Website Modernization and Figma Design System ask for a password before the study. The screen is a password field and Continue. A wrong password says “That password is incorrect. Try again.” A correct password opens that study for the rest of the browser session. Both pages use the same `PASSWORD` value. Website Modernization keeps it in `projects/website-modernization/gate.js`. Figma Design System keeps it in `projects/figma-design-system/gate.js`. It is a simple screen, not a security control. The projects card stays visible.
 
-About uses the same navy shades as circles behind the heading “About Me”, then a biography, three image placeholders, and the contact section “Let's Connect”. Home uses the shades as a grid of blocks behind the name.
+About uses the same navy shades as circles behind the heading “About Me”, then a biography that spans the page column, three image placeholders, and the contact section “Let's Connect”. That section is a shaded box, and the form inside it is centered. Home uses the shades as a grid of blocks behind the name.
 
 The header is on every page: a sticky white bar on wide screens, and a menu button with a side drawer below 48rem. Links are Home, Projects, and About, in that order, with `aria-current="page"` on the current page. Escape and the blanket close the drawer.
 
