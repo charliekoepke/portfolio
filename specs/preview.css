@@ -1197,13 +1197,35 @@ textarea.field {
 }
 
 .nav-link {
+  display: grid;
+  justify-content: start;
   color: var(--color-text-secondary);
   text-decoration: none;
+}
+
+.nav-link > span,
+.nav-link::after {
+  grid-area: 1 / 1;
+}
+
+.nav-link::after {
+  content: attr(data-text);
+  font-family: var(--font-family-emphasis);
+  font-weight: 700;
+  visibility: hidden;
 }
 
 .nav-link[aria-current="page"] {
   color: var(--color-text-primary);
   font-weight: var(--font-weight-semibold);
+}
+
+.nav-link:hover,
+.nav-link.is-hover,
+.nav-link[aria-current="page"]:hover,
+.nav-link[aria-current="page"].is-hover {
+  font-family: var(--font-family-emphasis);
+  font-weight: 700;
 }
 
 .site-footer {

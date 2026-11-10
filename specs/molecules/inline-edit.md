@@ -6,7 +6,7 @@ Default structure follows [inline edit](https://atlassian.design/components/inli
 
 ## Default example
 
-The project title "Intake redesign" is a button named "Edit project title". Activating it shows the input, then "Save" and "Cancel".
+The project title "Intake redesign" is a button named "Intake redesign, edit project title". Activating it shows the input, then "Save" and "Cancel".
 
 ## Appearance
 
@@ -14,7 +14,7 @@ Read mode uses the body or page-title style of the surrounding text, with a 2px 
 
 ## Rules
 
-- Read mode is a button. Its name is "Edit" plus the field name.
+- Read mode is a button. Its name starts with the visible value, then a visually hidden "edit" plus the field name, so speech input can target what is on screen (WCAG 2.5.3).
 - Enter saves. Escape cancels and restores the previous value.
 - Save keeps the new value and returns to read mode. Focus returns to the edit button.
 - An invalid value stays in edit mode and uses the input error sentence.

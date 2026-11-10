@@ -2,7 +2,7 @@
 
 The footer closes every page. The name and contact icons sit on the left. The site links sit on the right.
 
-It is built from the [link](../atoms/link.md) atom, the LinkedIn image in `images/linkedin.webp`, and the email icon in `foundations/iconography.md`.
+It is built from the [link](../atoms/link.md) atom, the LinkedIn image in `src/assets/linkedin.webp`, and the email icon in `foundations/iconography.md`.
 
 ## Default example
 
@@ -12,7 +12,7 @@ It is built from the [link](../atoms/link.md) atom, the LinkedIn image in `image
 
 The footer is a white surface with a 1px `#D0D9E6` top border. Block padding is 32px. Inline padding matches the page margin for the breakpoint. The inner row maxes out at 960px plus that margin, with the two sides at opposite ends and 32px between them.
 
-The name is Montserrat 600, 32px, `#12263E`. The icons sit in one row under the name, with 16px between them. The LinkedIn control is the image `images/linkedin.webp` at 40px, and its accessible name is "LinkedIn". The email control is a 40px circle with a 24px line icon, `#17345A`, and the hover fill is `#E6EDF5`.
+The name is Montserrat 600, 32px, `#12263E`. The icons sit in one row under the name, with 16px between them. The LinkedIn control is the image `src/assets/linkedin.webp` at 40px, and its accessible name is "LinkedIn". The email control is a 40px circle with a 24px line icon, `#17345A`, and the hover fill is `#E6EDF5`.
 
 The site links are a vertical list, aligned to the right, 8px apart. They are Montserrat 600, `#3D5168`. The current page is `#0C1B2E`. Hover is `#102544`.
 
