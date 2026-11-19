@@ -28,7 +28,7 @@ Principles:
 - The same action keeps the same label everywhere.
 - Color, weight, and text work together. Color is never the only signal.
 - Motion explains a change of state.
-- The public page and `components.html` show the same component.
+- The public page shows the component defined in its spec.
 - Project cards come from real entries in `projects/catalog.js`. An empty catalog leaves the home preview hidden.
 
 ## Design system
@@ -39,10 +39,10 @@ Specs live in `specs/`. Read the relevant spec before generating UI.
 - `tokens/` — named tokens that implement the foundations
 - `atoms/`, `molecules/`, `organisms/`, `patterns/` — components and page patterns
 - `tokens.css` — token values the site consumes
-- `preview.css` and `catalog.js` — the component catalog
+- `preview.css` and `catalog.js` — specimens for the components
 - `scripts/token-audit.js` — checks tokens against the specs
 
-`components.html` in the portfolio root is the visual reference. It groups specimens by folder and shows each description, then its variants and states.
+The public pages are the visual reference. A specimen uses the same markup as the page that uses the component.
 
 Tokens live in `specs/tokens.css`. Every token there is also documented in a markdown table under `specs/tokens/`. Pages and styles use `var(--token)` for any value the system already names. Layout widths that have no token stay literal. A 1px border stays literal. `color-mix()` is allowed. `font-weight: 700` is allowed because there is no bold token. `line-height: 1` matches a leading token, so it uses `var(--line-height-*)` or is omitted.
 
@@ -106,11 +106,9 @@ Below 48rem the primary navigation moves into the side drawer and the menu butto
 
 ## Implementation standards
 
-Public pages are HTML, `site.css`, and `site.js`. They load `specs/tokens.css`. Catalog pages load `specs/tokens.css`, `specs/preview.css`, and `specs/catalog.js`.
+Public pages are HTML, `site.css`, and `site.js`. They load `specs/tokens.css`. Specimens live in `specs/catalog.js` and are styled in `specs/preview.css`.
 
 A branch stays centered on one page. Shared updates, such as the header, footer, or favicon, can be included when that page needs them. Pull request descriptions use `.github/pull_request_template.md`: a bold “Updates” heading, then a list of what changed on the branch.
-
-`components.html` is the catalog of the current components. It loads the specimens and the preview styles, then reads each description from the matching spec. The description is the first paragraph after the title. Keep `components.html` free of copied markup and copied descriptions.
 
 When a component’s appearance, copy, variants, or states change, update all of these in the same change:
 
@@ -133,6 +131,6 @@ node specs/scripts/token-audit.js
 
 The audit checks that `tokens.css` matches the token specs, that pages use those tokens, that spacing stays on the 8px grid, and that text and control boundaries meet the contrast checks above. `font-family` is outside the audit. GitHub Actions runs the same script on a pull request into `main` and again when that change is pushed to `main`.
 
-Before calling a visual change done, compare the page that uses the component with its entry in `components.html`. Check the variants and states that changed, including empty and error states. Exercise the control with the keyboard. Confirm the focus ring, the accessible name, and the reduced-motion behavior. Look at a narrow viewport and a wide one when layout changes.
+Before calling a visual change done, compare the page that uses the component with its spec and its specimen. Check the variants and states that changed, including empty and error states. Exercise the control with the keyboard. Confirm the focus ring, the accessible name, and the reduced-motion behavior. Look at a narrow viewport and a wide one when layout changes.
 
-A component change is ready when the audit passes, the four catalog sources match, and the public page and `components.html` show the same component.
+A component change is ready when the audit passes, and the page, the specimen, the preview styles, and the spec match.

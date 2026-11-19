@@ -22,7 +22,7 @@ A flag is a separate component. A flag floats above the page and can be dismisse
 
 ## Appearance
 
-The alert sits in the page flow. On a wide page it spans half the page. On a narrow page it spans the content column. Padding 16px. Radius 4px (`--radius-field`), the same corner as a field. Every variant uses a solid white surface (`--color-surface-default`). The border is 4pt and full opacity. The heading is 16px Montserrat 700. The body is 14px Gafata 400. A dismissible alert adds a 40px close icon. A persistent alert has no close control.
+The alert sits in the page flow. On a wide page it spans half the page. On a narrow page it spans the content column. Padding 16px. Radius 4px (`--radius-field`), the same corner as a field. Every variant uses a solid white surface (`--color-surface-default`). The border is 4pt and full opacity. The heading is 16px Montserrat 700. The body is 14px Gafata 400. A dismissible alert adds the quiet icon button from `atoms/icon-button.md`, named "Dismiss", with the close icon. The icon stays navy. A persistent alert has no close control.
 
 | Variant | Fill | Border and heading | Body | Role |
 | --- | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ The fill and the text stay opaque.
 - Keep the heading to one line. Put extra detail in the body. The heading can name the alert type.
 - When a response is required, say what to do next in plain language. Do not blame the person.
 - Use an alert for the current task. Too many alerts get ignored.
-- A dismissible alert includes a close icon. A persistent alert stays on the page and has no close control.
+- A dismissible alert includes a quiet icon button named "Dismiss". A persistent alert stays on the page and has no close control.
 - Let the person dismiss an alert when that is appropriate.
 - Start the text with the alert type when color alone would hide the meaning. Informative can begin with "Announcement" or a more precise word. Warning is potentially critical. Success means the action worked. Error means the action failed.
 - Success uses `role="status"`. Error uses `role="alert"`. Informative and warning use `role="region"` with an accessible name.

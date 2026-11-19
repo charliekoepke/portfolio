@@ -638,24 +638,20 @@ html.js .primary-nav.is-open {
   font-weight: 700;
 }
 
-.alert-success .alert-title,
-.alert-success .alert-dismiss {
+.alert-success .alert-title {
   color: var(--color-success);
 }
 
-.alert-error .alert-title,
-.alert-error .alert-dismiss {
+.alert-error .alert-title {
   color: var(--color-danger);
 }
 
-.alert-warning .alert-title,
-.alert-warning .alert-dismiss {
+.alert-warning .alert-title {
   color: var(--color-warning);
 }
 
-.alert-dismiss {
+.icon-btn {
   display: inline-flex;
-  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: var(--space-40);
@@ -663,10 +659,18 @@ html.js .primary-nav.is-open {
   padding: 0;
   border: 0;
   border-radius: var(--radius-button);
-  background: transparent;
 }
 
-.alert-dismiss:hover {
+.alert .icon-btn {
+  flex-shrink: 0;
+}
+
+.icon-btn-quiet {
+  background: transparent;
+  color: var(--color-action-primary);
+}
+
+.icon-btn-quiet:hover {
   background: var(--color-surface-sunken);
 }
 

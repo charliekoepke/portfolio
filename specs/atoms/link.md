@@ -16,9 +16,10 @@ Default structure follows [link](https://atlassian.design/components/link/usage)
 | Hover | `#102544` | `--color-link-hover` |
 | Size | 1rem Gafata 400 | `--font-size-body` |
 | Decoration | Underline | |
+| Underline offset | 8px | `--space-8` |
 | Focus | 2px `#17345A` ring, offset 2px | `--color-focus` |
 
-The resting navy is the primary button fill. Hover uses the primary button hover navy. The underline stays in both states.
+The resting navy is the primary button fill. Hover uses the primary button hover navy. The underline stays in both states, 8px below the text.
 
 Resting contrast is 12.54:1 on white, 11.67:1 on the page, and 10.62:1 on sunken. Hover is 15.33:1 on white and 14.26:1 on the page. The lowest resting placement is the danger surface, at 10.56:1. Each pair clears the WCAG 2.1 1.4.3 floor of 4.5:1 for normal text. The underline supplies a cue besides color, which meets 1.4.1.
 
