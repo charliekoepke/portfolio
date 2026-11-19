@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router";
 import SiteFooter from "../components/organisms/SiteFooter.jsx";
-import SiteHeader from "../components/organisms/SiteHeader.jsx";
+import Navigation from "../components/organisms/Navigation.jsx";
 import RouteFocus from "../lib/RouteFocus.jsx";
 
 export default function Layout() {
@@ -10,7 +10,7 @@ export default function Layout() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <SiteHeader />
+      <Navigation />
       <main id="main" tabIndex={-1}>
         <div className="page" key={pathname}>
           <Outlet />

@@ -18,7 +18,6 @@ Source lives in `src/`:
 - `content/projects/` — one folder per case study, holding `index.js` and that study’s images
 - `lib/` — route focus, scroll reveal, page title, rich text links, class helpers
 - `styles/site.css` and `styles/motion.css` — site styles and animation
-- `catalog/` — the component catalog
 - `assets/` — shared images such as `linkedin.webp`
 
 `public/` holds files copied as they are: `images/favicon.ico` and `.nojekyll`.
@@ -52,10 +51,9 @@ Specs live in `specs/`. Read the relevant spec before generating UI.
 - `tokens/` — named tokens that implement the foundations
 - `atoms/`, `molecules/`, `organisms/`, `patterns/` — components and page patterns
 - `tokens.css` — token values the site consumes
-- `preview.css` — catalog styles, used with `src/catalog/specimens.jsx`
 - `scripts/token-audit.js` — checks tokens against the specs
 
-The public pages are the visual reference. A specimen uses the same markup as the page that uses the component.
+The public pages are the visual reference.
 
 Tokens live in `specs/tokens.css`. Every token there is also documented in a markdown table under `specs/tokens/`. Pages and styles use `var(--token)` for any value the system already names. Layout widths that have no token stay literal. A 1px border stays literal. `color-mix()` is allowed. `font-weight: 700` is allowed because there is no bold token. `line-height: 1` matches a leading token, so it uses `var(--line-height-*)` or is omitted.
 
@@ -123,20 +121,11 @@ Below 48rem the primary navigation moves into the side drawer and the menu butto
 
 ## Implementation standards
 
-The site entry `src/main.jsx` loads `specs/tokens.css`, `src/styles/site.css`, and `src/styles/motion.css`. The catalog entry `src/catalog/main.jsx` loads `specs/tokens.css`, `specs/preview.css`, and `src/styles/motion.css`. Components output the class names those stylesheets already define. One component serves the site and the catalog. Its props choose the variant, and a `state` prop renders a forced state such as `hover` for the catalog.
+The site entry `src/main.jsx` loads `specs/tokens.css`, `src/styles/site.css`, and `src/styles/motion.css`. Components output the class names those stylesheets already define.
 
 A branch stays centered on one page. Shared updates, such as the header, footer, or favicon, can be included when that page needs them. Pull request descriptions use `.github/pull_request_template.md`: a bold “Updates” heading, then a list of what changed on the branch.
 
-`components.html` has been removed, so the catalog has no build entry. `src/catalog/Catalog.jsx` still renders the specimens from `src/catalog/specimens.jsx`, and reads each description from the matching spec at build time. The description is the first paragraph after the title. Keep the catalog free of copied descriptions. Interactive demos for the catalog live in `src/catalog/demos.jsx`.
-
-When a component’s appearance, copy, variants, or states change, update all of these in the same change:
-
-- The component in `src/components/`, and the page that uses it, including `src/styles/site.css` when the site styles it
-- The matching specimen in `src/catalog/specimens.jsx`
-- The matching styles in `specs/preview.css`
-- The component’s markdown spec, including the opening description
-
-The specimen `id` matches the markdown file name, such as `alert` and `specs/molecules/alert.md`. A new component needs a component file, a specimen, preview styles, and that markdown file so it appears in the catalog.
+When a component’s appearance, copy, variants, or states change, update the component in `src/components/`, the page that uses it, `src/styles/site.css` when the site styles it, and the component’s markdown spec, including the opening description.
 
 ## Quality assurance
 
@@ -150,8 +139,8 @@ npm run build
 
 The audit checks that `tokens.css` matches the token specs, that stylesheets and components use those tokens, that spacing stays on the 8px grid, and that text and control boundaries meet the contrast checks above. It skips `node_modules/` and `dist/`. `font-family` is outside the audit. GitHub Actions runs the audit and the build on a pull request into `main` and again when that change is pushed to `main`.
 
-`axe-core` is a dev dependency. Run it in the browser against each route and the catalog, with the WCAG 2.0 and 2.1 A and AA rules, and expect no violations.
+`axe-core` is a dev dependency. Run it in the browser against each route, with the WCAG 2.0 and 2.1 A and AA rules, and expect no violations.
 
-Before calling a visual change done, compare the page that uses the component with its spec and its specimen. Check the variants and states that changed, including empty and error states. Exercise the control with the keyboard. Confirm the focus ring, the accessible name, focus after a route change, and the reduced-motion behavior. Look at a narrow viewport and a wide one when layout changes.
+Before calling a visual change done, compare the page that uses the component with its spec. Check the variants and states that changed, including empty and error states. Exercise the control with the keyboard. Confirm the focus ring, the accessible name, focus after a route change, and the reduced-motion behavior. Look at a narrow viewport and a wide one when layout changes.
 
-A component change is ready when the audit and build pass, and the page, the specimen, the preview styles, and the spec match.
+A component change is ready when the audit and build pass, and the page and the spec match.

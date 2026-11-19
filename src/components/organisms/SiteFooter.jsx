@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import linkedin from "../../assets/linkedin.webp";
 import Icon from "../atoms/Icon.jsx";
-import { SITE_LINKS } from "./SiteHeader.jsx";
+import { SITE_LINKS } from "./Navigation.jsx";
 
 export default function SiteFooter() {
   return (

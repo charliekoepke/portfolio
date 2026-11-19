@@ -4,7 +4,7 @@ Navigation is the bar at the top of every page. It names the site and links to t
 
 Default structure follows [Atlassian navigation](https://atlassian.design/components/atlassian-navigation) in the [Atlassian Design System](https://atlassian.design/design-system).
 
-The site design below is the component. `src/components/organisms/SiteHeader.jsx` implements it, and `src/styles/site.css` styles it. The template example uses the same design with sample labels.
+The site design below is the component. `src/components/organisms/Navigation.jsx` implements it, and `src/styles/site.css` styles it. The template example uses the same design with sample labels.
 
 ## Site navigation
 
