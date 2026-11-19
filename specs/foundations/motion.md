@@ -24,6 +24,9 @@ A dropdown menu enters in 100ms with ease-out. A modal dialog enters in 350ms wi
 
 ## Rules
 
-- Motion is productive. It shows an open, close, or move. It does not decorate.
-- When `prefers-reduced-motion` is set, use no transform animation. State changes are instant. The spinner stays still and keeps the word "Loading".
+- Motion is productive. It shows an open, close, move, or arrival.
+- Entrance motion plays once. A page fades in on a route change. Billboard shapes enter with a short stagger, and the hero title and role rise in. Sections, figures, and project cards rise in once as they scroll into view.
+- Nothing loops, blinks, or flashes, and each animation ends within a second, so no pause control is needed (WCAG 2.2.2 and 2.3.1).
+- Content waiting to be revealed is visible as soon as it receives focus and when the page prints.
+- Animation is written inside `@media (prefers-reduced-motion: no-preference)` in `src/styles/motion.css`. When `prefers-reduced-motion` is set, use no transform animation. Content appears at once and state changes are instant. The spinner stays still and keeps the word "Loading".
 - Do not animate a change that carries meaning by motion alone. The new state is also visible without the animation.

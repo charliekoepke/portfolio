@@ -20,6 +20,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
       - name: Audit tokens against the specs and WCAG 2.1
         run: node specs/scripts/token-audit.js
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the site
+        run: npm run build

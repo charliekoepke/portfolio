@@ -25,6 +25,8 @@ Do not use color as the only way to convey state, status, or that a text run is 
 - Focus order follows the visual order.
 - Focus is never fully hidden.
 - A component does not trap keyboard focus.
+- After a route change, focus moves to the new page’s `h1`, and the page scrolls to the top. When the address has a hash, focus moves to that target.
+- Content hidden off screen, such as the closed navigation drawer, is out of the tab order.
 
 ## Text
 

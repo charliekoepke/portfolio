@@ -10,7 +10,7 @@
  * GitHub Actions runs this on a pull request into main, and again when that
  * change is pushed to main.
  *
- * HTML pages, preview.css, and catalog.js must use those tokens for any
+ * HTML pages, stylesheets, and React components must use those tokens for any
  * value the design system already names. A literal that matches a token
  * fails the audit.
  */
@@ -298,14 +298,14 @@ function checkCssSource(fileLabel, source, lookups) {
 
 function pageFiles(dir, acc) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    if (entry.name === ".git" || entry.name === "node_modules" || entry.name === "dist") continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       pageFiles(full, acc);
       continue;
     }
     if (entry.name === "tokens.css" || entry.name === "token-audit.js") continue;
-    if (/\.(html|css|js)$/.test(entry.name)) acc.push(full);
+    if (/\.(html|css|js|jsx)$/.test(entry.name)) acc.push(full);
   }
   return acc;
 }

@@ -1,0 +1,128 @@
+/* Nothing here loops or flashes, and each animation ends within a second (WCAG 2.2.2 and 2.3.1). */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; translate: 0 var(--space-16); }
+}
+
+@keyframes grow-in {
+  from { opacity: 0; scale: 0.6; }
+}
+
+@keyframes sweep-in {
+  from { opacity: 0; translate: -15% 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .icon-btn,
+  .page-btn,
+  .text-link,
+  .field,
+  .icon-link,
+  .alert-dismiss,
+  .primary-nav a,
+  .nav-link,
+  .footer-nav a,
+  .tab,
+  .menu-item,
+  .side-link {
+    transition:
+      background-color var(--motion-duration-small) var(--motion-easing-out),
+      color var(--motion-duration-small) var(--motion-easing-out),
+      border-color var(--motion-duration-small) var(--motion-easing-out),
+      font-weight var(--motion-duration-small) var(--motion-easing-out);
+  }
+
+  .page {
+    animation: fade-in var(--motion-duration-medium) var(--motion-easing-out);
+  }
+
+  .billboard-blocks span {
+    animation: fade-in var(--motion-duration-large) var(--motion-easing-out) both;
+    animation-delay: calc(var(--motion-duration-small) * var(--i, 0));
+  }
+
+  .about-hero .billboard-blocks span {
+    animation-name: grow-in;
+  }
+
+  .projects-hero .billboard-blocks span {
+    animation-name: sweep-in;
+  }
+
+  .billboard .hero-inner > *,
+  .study-hero h1 {
+    animation: rise-in var(--motion-duration-large) var(--motion-easing-out) both;
+  }
+
+  .billboard .hero-role {
+    animation-delay: var(--motion-duration-small);
+  }
+
+  .reveal {
+    opacity: 0;
+    translate: 0 var(--space-24);
+    transition:
+      opacity var(--motion-duration-large) var(--motion-easing-out),
+      translate var(--motion-duration-large) var(--motion-easing-out);
+    transition-delay: calc(var(--motion-duration-small) * var(--reveal-order, 0));
+  }
+
+  .reveal.is-visible,
+  .reveal:focus-within {
+    opacity: 1;
+    translate: none;
+  }
+
+  .project-card {
+    transition:
+      box-shadow var(--motion-duration-small) var(--motion-easing-out),
+      transform var(--motion-duration-small) var(--motion-easing-out);
+  }
+
+  .project-card.reveal {
+    transition:
+      opacity var(--motion-duration-large) var(--motion-easing-out),
+      translate var(--motion-duration-large) var(--motion-easing-out),
+      box-shadow var(--motion-duration-small) var(--motion-easing-out),
+      transform var(--motion-duration-small) var(--motion-easing-out);
+    transition-delay:
+      calc(var(--motion-duration-small) * var(--reveal-order, 0)),
+      calc(var(--motion-duration-small) * var(--reveal-order, 0)),
+      0s,
+      0s;
+  }
+
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: translateY(calc(var(--space-8) * -0.5));
+  }
+
+  .alert:not([hidden]),
+  .expand-body:not([hidden]),
+  .error-text {
+    animation: rise-in var(--motion-duration-medium) var(--motion-easing-out);
+  }
+
+  .menu,
+  .popup:not([hidden]),
+  .calendar,
+  .tooltip:not([hidden]) {
+    animation: fade-in var(--motion-duration-small) var(--motion-easing-out);
+  }
+
+  html.js.nav-open .nav-blanket {
+    animation: fade-in var(--motion-duration-medium) var(--motion-easing-out);
+  }
+}
+
+@media print {
+  .reveal {
+    opacity: 1;
+    translate: none;
+  }
+}
